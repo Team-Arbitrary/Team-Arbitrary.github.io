@@ -21,8 +21,17 @@
         <!-- TEXT BOX FOR SESSION NAME --> 
         <div class="sessionName">
             <label for="session">What professional development session or event did you attend?</label>
-            <input type="text" name="session" size="30" maxlength="50"><br>
+            <input type="text" name="sessionName" size="30" maxlength="50"><br>
         </div><br>
+
+        <!-- RADIO BUTTONS FOR VIRTUAL OR IN-PERSON SESSIONS -->
+        <div class="sessionType">
+            <p>Was the session you attended hosted virtually or in-person?</p>
+            <input type="radio" name="sessionType" id="virtual" value="virtual">
+            <label for="sessionType">Virtual</label>
+            <input type="radio" name="sessionType" id="inPerson" value="inPerson">
+            <label for="sessionType">In-Person</label>
+        </div>
 
         <!-- START DATE OF SESSION -->
         <div class="sessionStartDate">
@@ -53,8 +62,7 @@
             <label for="description">Describe the session you attended and how it relates to your professional development.</label><br>
             <textarea name="description" rows="5" cols="80"></textarea>
         </div><br>
-</form>
-
+    </form>
 </section>
 
 <?php 
