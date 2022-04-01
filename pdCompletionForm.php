@@ -28,10 +28,10 @@
         <div class="sessionType">
             <p>Was the session you attended hosted virtually or in-person?</p>
             <input type="radio" name="sessionType" id="virtual" value="virtual">
-            <label for="sessionType">Virtual</label>
+            <label for="sessionType">Virtual</label><br>
             <input type="radio" name="sessionType" id="inPerson" value="inPerson">
-            <label for="sessionType">In-Person</label>
-        </div>
+            <label for="sessionType">In-Person</label><br>
+        </div><br>
 
         <!-- START DATE OF SESSION -->
         <div class="sessionStartDate">
