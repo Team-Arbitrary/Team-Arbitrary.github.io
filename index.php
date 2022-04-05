@@ -5,7 +5,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="pdform.css">
 </head>
-
+<?php //pdCompletionForm.php
+    include 'header.php';
+?>
 <section class="container">
     <h1 class="form-title">Professional Development Completion Form</h1>
 
@@ -71,3 +73,7 @@
         <input type="submit" value="SUBMIT">
     </form>
 </section>
+
+<?php 
+    include'footer.php';
+?>
