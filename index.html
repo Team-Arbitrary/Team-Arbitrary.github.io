@@ -3,11 +3,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <link rel="stylesheet" type="text/css" href="header.css">
     <link rel="stylesheet" type="text/css" href="pdform.css">
+    <style type="text/css">
+    .footer-text {
+      text-align: center;
+    } 
+    </style>
 </head>
-<?php //pdCompletionForm.php
-    include 'header.php';
-?>
+<header>
+    <!-- TODO: Add nav w/ links to login, professional-dev form, etc... -->
+    <h2 class="header-title text-xl margin-y-0 padding-1">
+    Professional Development Tool
+    </h2>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Form</a></li>
+            <li><a href="#">My PD</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav> 
+</header>
 <section class="container">
     <h1 class="form-title">Professional Development Completion Form</h1>
 
@@ -74,6 +94,4 @@
     </form>
 </section>
 
-<?php 
-    include'footer.php';
-?>
+<p class="footer-text">&copy; Team Arbitrary 2022. All rights reserved</p>
