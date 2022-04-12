@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: ;
+    padding: 0;
 }
 
 html {
@@ -14,17 +14,6 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-.container {
-    min-height: 870px;
-    margin: 10px;
-    padding: 1rem 2rem;
-    border: 2px solid black;
-}
-
-.section {
-    margin: 5px;
-}
-
 .text-xl {
     font-size: 2rem;
 }
@@ -36,4 +25,8 @@ body {
 
 .padding-1 {
     padding: 1rem;
+}
+
+.disclaimer {
+    display: none;
 }

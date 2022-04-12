@@ -15,11 +15,11 @@
 
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Form</a></li>
-                    <li><a href="#">My PD</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">FORM</a></li>
+                    <li><a href="#">MY PD</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">LOGOUT</a></li>
                 </ul>
             </nav> 
         </header>

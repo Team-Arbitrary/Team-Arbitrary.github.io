@@ -1,9 +1,65 @@
-@import "general.css";
 
 .form-title {
-  
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.description-box {
-  
+textarea, input {
+	border-radius: 10px;  
+	border: none;
+	width: 35vw;
+	margin: 0 auto;
+	font-size: 1.2em;
+	padding: 0 5px;
+	min-width: 200px;
+	line-height: 1.4em;
+}
+
+textarea:focus, input:focus {
+	outline: none;
+}
+
+label {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.question {
+	font-size: 1.4em;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+    min-height: 870px;
+    margin: 10px auto;
+    margin-top: 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(180, 210, 255, 0.4);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+    width: 60vw;
+}
+
+form {
+	align-items: center;
+}
+
+input[type='submit'] {
+	width: 20vw;
+	border: solid lightgray 1px;
+	transition: all 0.2s ease 0s;
+}
+
+input[type='submit']:hover {
+	background-color: rgba(225, 225, 225, 0.8);
 }
