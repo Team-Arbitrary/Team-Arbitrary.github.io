@@ -78,6 +78,4 @@
     </form>
 </section>
 
-<?php 
-    include'footer.php';
-?>
+<iframe class="footer" src="general/footer/footer.html"></iframe>

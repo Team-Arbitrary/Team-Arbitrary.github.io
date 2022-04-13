@@ -10,15 +10,17 @@
 <!--    </form>-->
 <!--</section>-->
 
-<?php //include '../header.php'; ?>
-
 <?php
-require_once "../utils.php";  // 载入一些常用函数以复用代码
+// Configuration
+$loginPageUrl = "../login/login.html";
+$mainPageUrl = "../main.html";  // TODO Homepage url after login
 
 session_start();
 
-// connect database and check if the database connection exists.
-require_once "../Database/connection.php";
+require_once "../utils.php";  // Load some common functions to reuse code
+require_once "../Database/connection.php";  // connect database
+
+// check if the database connection exists.
 if ( !isset($connection) )
 {
     exit("! Could not find database connection");
@@ -27,7 +29,8 @@ if ( !isset($connection) )
 // check if the username and the password exists.
 if ( !isset($_POST['username'], $_POST['password']) )
 {
-    exit("Please fill both the username and password fields!");
+    Alert("Please fill both the username and password fields!");
+    GoToURL($loginPageUrl);
 }
 
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
@@ -43,6 +46,7 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
         $statement->bind_result($id, $password_hash);
         $statement->fetch();  // Fetch results from a prepared SQL statement into the bound variables
 
+        // TODO before the registration system is completed, the hash value is not used as a judgment basis
 //        if (password_verify($_POST['password'], $password_hash))
         if ($_POST['password'] === $password_hash)
         {
@@ -54,25 +58,22 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
             $_SESSION['id'] = $id;
 
             Alert("Login Successful! Welcome back, {$_SESSION['name']} (*^▽^*)");
+            GoToURL($mainPageUrl);
         }
         else
         {
             Alert("Incorrect Password!");
-            GoToURL("../login/login.html");
+            GoToURL($loginPageUrl);
         }
     }
     else
     {
         // Incorrect username or The database has more than one identical username that the user entered
         Alert("Incorrect Username or Database Error!");
-        GoToURL("../login/login.html");
+        GoToURL($loginPageUrl);
     }
 
-    $statement->close();  // 关闭SQL语句的执行
-    $connection->close();  // 关闭数据库的连接
+    $statement->close();  // Close the SQL prepared statement
+    $connection->close();  // close the connection to the database
 }
 ?>
-
-<?php //include '../footer.php'; ?>
-
-

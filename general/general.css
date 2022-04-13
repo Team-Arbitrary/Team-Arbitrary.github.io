@@ -30,3 +30,12 @@ body {
 .disclaimer {
     display: none;
 }
+
+/*only for all header and footer of pages*/
+iframe.header, iframe.footer {
+    margin: 0;
+    border-style: none;
+    border-width: 0;
+    width: 100%;
+    height: 100%;
+}
