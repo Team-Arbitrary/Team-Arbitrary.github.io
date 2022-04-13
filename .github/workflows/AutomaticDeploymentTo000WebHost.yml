@@ -18,7 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: start prompt
+      - name: Start prompt
         run: echo Start automatic deployment
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -32,7 +32,7 @@ jobs:
           username: ${{ secrets.username_test }}
           password: ${{ secrets.password_test }}
           
-      - name: completion prompt
+      - name: Completion prompt
         run: |
           echo Automatic deployment completed
           echo Please go to aa to check
