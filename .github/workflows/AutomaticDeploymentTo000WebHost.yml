@@ -31,8 +31,10 @@ jobs:
           server: files.000webhost.com
           username: ${{ secrets.username_test }}
           password: ${{ secrets.password_test }}
+          server-dir: public_html/www/
+          dangerous-clean-slate: true
           
       - name: Completion prompt
         run: |
           echo Automatic deployment completed
-          echo Please go to aa to check
+          echo Please go to https://goniometrical-drops.000webhostapp.com/ to check
