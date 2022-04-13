@@ -1,4 +1,4 @@
-# Team-Arbitrary.github.io
+# Team-Arbitrary Group Project
 Team-Arbitrary's Group Project deployed on the 000WebHost Platform
 
 
