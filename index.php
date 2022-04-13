@@ -28,7 +28,7 @@
 
         <!-- TEXT BOX FOR SESSION NAME --> 
         <div class="sessionName section">
-            <label for="session" class="question">What professional development session or event did you attend?</label>
+            <label for="sessionName" class="question">What professional development session or event did you attend?</label>
             <input type="text" name="sessionName" size="30" maxlength="50"><br>
         </div><br>
 

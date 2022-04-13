@@ -16,8 +16,8 @@
             <nav>
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">FORM</a></li>
-                    <li><a href="#">MY PD</a></li>
+                    <li><a href="pdCompletionForm.php">FORM</a></li>
+                    <li><a href="myPD.php">MY PD</a></li>
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="#">LOGOUT</a></li>
                 </ul>
