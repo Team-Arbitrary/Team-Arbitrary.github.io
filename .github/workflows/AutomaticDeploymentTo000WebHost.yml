@@ -18,15 +18,21 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: start prompt
+        run: echo Start automatic deployment
+      
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+      
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ftp.samkirkland.com
+          username: myFtpUserName
+          password: ${{ secrets.ftp_password }}
+          
+      - name: completion prompt
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo Automatic deployment completed
+          echo Please go to aa to check
