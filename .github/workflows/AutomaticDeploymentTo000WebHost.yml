@@ -39,6 +39,7 @@ jobs:
             **/node_modules/**
             .htaccess
             .idea/**
+            README.md
             DESIGN/**
             DOCUMENTATION/**
           
