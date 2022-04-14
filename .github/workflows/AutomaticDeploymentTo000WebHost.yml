@@ -40,7 +40,7 @@ jobs:
             .gitignore
             **/node_modules/**
             .htaccess
-            .idea
+            .idea/**
           
       - name: 🎉 Completion prompt
         run: |
