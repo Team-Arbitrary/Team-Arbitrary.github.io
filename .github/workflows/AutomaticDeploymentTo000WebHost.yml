@@ -36,11 +36,11 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
-            .gitattributes
-            .gitignore
             **/node_modules/**
             .htaccess
             .idea/**
+            DESIGN/**
+            DOCUMENTATION/**
           
       - name: 🎉 Completion prompt
         run: |
