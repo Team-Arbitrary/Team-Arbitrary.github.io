@@ -14,7 +14,7 @@
     <!-- TODO: This action should point to a file that handles the $_POST superglobal
                 by testing if all fields are set, and if so, make a SQL call to add
                 this submission as a row. -->
-    <form method="post" action="pdCompletionForm.php">
+    <form method="post" action="myPD.php">
         <!-- EMPLOYEE STATUS RADIO BUTTONS -->
         <div class="employeeStatus section">
             <p class="question">What is your employee status?</p>
