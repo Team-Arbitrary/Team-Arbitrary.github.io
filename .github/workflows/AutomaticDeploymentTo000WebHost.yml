@@ -18,7 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Start prompt
+      - name: 🎉 Start prompt
         run: echo Start automatic deployment
       
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -36,10 +36,13 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            .gitattributes
+            .gitignore
             **/node_modules/**
             .htaccess
+            .idea
           
-      - name: Completion prompt
+      - name: 🎉 Completion prompt
         run: |
           echo Automatic deployment completed
-          echo Please go to "goniometrical-drops.000webhostapp.com/" to check
+          echo Please go to Test-Website to check
