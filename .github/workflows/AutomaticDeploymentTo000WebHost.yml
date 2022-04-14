@@ -1,4 +1,4 @@
-name: Automatic Deploy Website to 000WebHost on Push
+name: 🚀 Automatic Deploy Website to 000WebHost on Push
 
 # Controls when the workflow will run
 on:
@@ -31,10 +31,15 @@ jobs:
           server: files.000webhost.com
           username: ${{ secrets.username_test }}
           password: ${{ secrets.password_test }}
-          server-dir: public_html/www/
-          dangerous-clean-slate: true
+          server-dir: public_html/
+          # dangerous-clean-slate: true
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .htaccess
           
       - name: Completion prompt
         run: |
           echo Automatic deployment completed
-          echo Please go to https://goniometrical-drops.000webhostapp.com/ to check
+          echo Please go to "goniometrical-drops.000webhostapp.com/" to check
