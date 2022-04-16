@@ -1,9 +1,9 @@
 <?php
 // Configuration
 $serverName = "localhost";
-$username = "admin";
-$password = "zxcv7373";
-$databaseNAME = "id18737052_project_schema";
+$username = "id18780626_arbitrary_tests";
+$password = "k6wBr^9q@ShCt1Ns";
+$databaseNAME = "id18780626_arbitrary_tests_database";
 
 require_once "../utils.php";  // Load some common functions to reuse code
 
