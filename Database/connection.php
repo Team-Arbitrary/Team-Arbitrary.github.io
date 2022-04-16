@@ -17,7 +17,7 @@ $DATABASE_NAME = "arbitrary_team_database";
 //$PASSWORD = "[vCQ=VZL\bR9n(m^";
 //$DATABASE_NAME = "id18737052_project_schema"
 
-require_once "../Utils.php";  // Load some common functions to reuse code
+require_once "../utils.php";  // Load some common functions to reuse code
 
 // Try to connect
 $connection = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
