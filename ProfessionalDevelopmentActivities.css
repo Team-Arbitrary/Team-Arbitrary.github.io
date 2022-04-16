@@ -1,0 +1,8 @@
+@charset "utf-8";
+body table {
+	border-style: none;
+	width: auto;
+}
+.InformationName {
+	text-align: end;
+}
