@@ -27,7 +27,8 @@ body {
     padding: 1rem;
 }
 
-.disclaimer {
+/*Block web code injection from unknown sources*/
+body > div.disclaimer {
     display: none;
 }
 
