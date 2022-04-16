@@ -43,13 +43,13 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
   
 
-- Class Name, Function Name: upper CamelCase
+- ~~Class Name~~, Function Name: upper CamelCase
 
   - Example:
 
   
 
-- Variable Name, ID: lower camelCase
+- Variable Name, ~~ID~~: lower camelCase
 
   - Example:
 
@@ -68,6 +68,10 @@ In short, except for the parts that need to capture attention, use lower camelCa
 Chrome will automatically lowercase part of the directory or file name magically
 
 Yes, not all but part, speechless
+
+When defining classes in html, use lowercase letters as Chrome's CSS selectors occasionally convert uppercase letters in class names to lowercase
+
+
 
 
 
