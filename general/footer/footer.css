@@ -1,3 +1,8 @@
 .footer-text {
     text-align: center;
 }
+
+/*Block content forcibly added by 000WebHost*/
+.disclaimer {
+    display: none;
+}

@@ -42,7 +42,8 @@ jobs:
             README.md
             DESIGN/**
             DOCUMENTATION/**
-          
+            Database/databaseSchema.sql
+
       - name: 🎉 Completion prompt
         run: |
           echo Automatic deployment completed
