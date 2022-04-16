@@ -78,4 +78,4 @@
     </form>
 </section>
 
-<iframe class="footer" src="general/Footer/Footer.html"></iframe>
+<iframe class="footer" src="General/Footer/Footer.html"></iframe>

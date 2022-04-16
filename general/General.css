@@ -33,7 +33,7 @@ body > div.disclaimer {
 }
 
 /*only for all header and Footer of pages*/
-iframe.header, iframe.footer {
+iframe.Header, iframe.Footer {
     margin: 0;
     border-style: none;
     border-width: 0;
