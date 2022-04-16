@@ -32,7 +32,7 @@ body > div.disclaimer {
     display: none;
 }
 
-/*only for all header and footer of pages*/
+/*only for all header and Footer of pages*/
 iframe.header, iframe.footer {
     margin: 0;
     border-style: none;

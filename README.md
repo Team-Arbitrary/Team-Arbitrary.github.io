@@ -19,6 +19,8 @@ Platform Tools:
 
 
 
+
+
 ## Coding Conventions:
 
 Abbreviations are not used in any naming to avoid forgetting, misunderstanding, and incomprehension
@@ -62,11 +64,13 @@ In short, except for the parts that need to capture attention, use lower camelCa
 
 
 
-## Some Notes for Coding:
+### Some Notes for Coding:
 
 Folder naming uses upper CamelCase, to eliminate "-" or "_" to reduce the length of names, to maintain a similar style to other kinds of programming project file structures, and to differentiate from resource files that represent specific instances
 
 Filenames are case-insensitive for files on the Mac and Windows default filesystems, but Linux is sensitive. This is just a reminder here.  ; )
+
+
 
 
 

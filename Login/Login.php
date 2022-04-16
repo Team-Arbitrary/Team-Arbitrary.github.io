@@ -1,6 +1,6 @@
 <!--<section>-->
-<!--    TODO: Add fields and file to handle login. -->
-<!--     This should point to a .php file that handles the login by checking the $_POST superglobal-->
+<!--    TODO: Add fields and file to handle Login. -->
+<!--     This should point to a .php file that handles the Login by checking the $_POST superglobal-->
 <!--            and testing whether user input matches the hashed password in the database. If so,-->
 <!--            mark the session as logged in. -->
 <!--            -->
@@ -12,13 +12,13 @@
 
 <?php
 // Configuration
-$loginPageUrl = "../login/login.html";
-$mainPageUrl = "../main.html";  // TODO Homepage url after login
+$LOGIN_PAGE_URL = "../Login/Login.html";
+$MAIN_PAGE_URL = "../main.html";  // TODO Homepage url after Login
 
 session_start();
 
-require_once "../utils.php";  // Load some common functions to reuse code
-require_once "../Database/connection.php";  // connect database
+require_once "../Utils.php";  // Load some common functions to reuse code
+require_once "../Database/Connection.php";  // connect database
 
 // check if the database connection exists.
 if ( !isset($connection) )
@@ -30,7 +30,7 @@ if ( !isset($connection) )
 if ( !isset($_POST['username'], $_POST['password']) )
 {
     Alert("Please fill both the username and password fields!");
-    GoToURL($loginPageUrl);
+    GoToURL($LOGIN_PAGE_URL);
 }
 
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
@@ -58,19 +58,19 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
             $_SESSION['id'] = $id;
 
             Alert("Login Successful! Welcome back, {$_SESSION['name']} (*^▽^*)");
-            GoToURL($mainPageUrl);
+            GoToURL($MAIN_PAGE_URL);
         }
         else
         {
             Alert("Incorrect Password!");
-            GoToURL($loginPageUrl);
+            GoToURL($LOGIN_PAGE_URL);
         }
     }
     else
     {
         // Incorrect username or The database has more than one identical username that the user entered
         Alert("Incorrect Username or Database Error!");
-        GoToURL($loginPageUrl);
+        GoToURL($LOGIN_PAGE_URL);
     }
 
     $statement->close();  // Close the SQL prepared statement
