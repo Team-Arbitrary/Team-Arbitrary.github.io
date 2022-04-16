@@ -23,9 +23,9 @@ require_once "../utils.php";  // Load some common functions to reuse code
 $connection = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
 if ($connection->connect_error)
 {
-    exit("! Database connection failed: $connection->connect_error");
+    exit("! database connection failed: $connection->connect_error");
 }
 else
 {
-    LogAtConsole("Database connection succeeded");
+    LogAtConsole("database connection succeeded");
 }

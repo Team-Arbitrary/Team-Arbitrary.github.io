@@ -55,7 +55,7 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
   
 
-- ~~Specific Resource File Name [.jpg, .png]: lower camelCase~~
+- ~~Specific Resource File Name [.jpg, .png]: lower camelCase~~ + underscore separating "\-" 
   
   - Example:
 

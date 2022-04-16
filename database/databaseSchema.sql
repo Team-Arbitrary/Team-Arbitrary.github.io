@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id18737052_project_schema`
+-- database: `id18737052_project_schema`
 --
 
 -- --------------------------------------------------------

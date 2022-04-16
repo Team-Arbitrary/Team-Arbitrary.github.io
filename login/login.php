@@ -18,7 +18,7 @@ $MAIN_PAGE_URL = "../main.html";  // TODO Homepage url after login
 session_start();
 
 require_once "../utils.php";  // Load some common functions to reuse code
-require_once "../Database/connection.php";  // connect database
+require_once "../database/connection.php";  // connect database
 
 // check if the database connection exists.
 if ( !isset($connection) )
@@ -69,7 +69,7 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
     else
     {
         // Incorrect username or The database has more than one identical username that the user entered
-        Alert("Incorrect Username or Database Error!");
+        Alert("Incorrect Username or database Error!");
         GoToURL($LOGIN_PAGE_URL);
     }
 
