@@ -31,13 +31,13 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
   
 
-- General Folder Name: upper CamelCase 
+- ~~General Folder Name: upper CamelCase~~ 
 
   - Example:
 
   
 
-- Code File Name [.html, .css, .js, .php]: upper CamelCase
+- ~~Code File Name [.html, .css, .js, .php]: upper CamelCase~~
 
   - Example:
 
@@ -55,12 +55,19 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
   
 
-- Specific Resource File Name [.jpg, .png]: lower camelCase
+- ~~Specific Resource File Name [.jpg, .png]: lower camelCase~~
+  
   - Example:
 
 
 
 In short, except for the parts that need to capture attention, use lower camelCase for things that represent specific instances, and use upper CamelCase for upper-level instances that contain these instances.
+
+
+
+Chrome will automatically lowercase part of the directory or file name magically
+
+Yes, not all but part, speechless
 
 
 
