@@ -10,8 +10,8 @@ if ( session_status() === PHP_SESSION_ACTIVE )
           "userID: {$_SESSION['userID']}");
 }
 
-session_destroy();
 session_unset();
+session_destroy();
 
 if ( session_status() === PHP_SESSION_NONE )
 {

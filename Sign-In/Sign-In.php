@@ -57,6 +57,14 @@ if ($statement->num_rows == 1)
         $_SESSION['userID'] = $userID;
         session_write_close();
 
+        if ( session_status() === PHP_SESSION_ACTIVE )
+        {
+            Alert("session active, ".
+                "isSignedIn: {$_SESSION['isSignedIn']} ".
+                "userName: {$_SESSION['userName']} ".
+                "userID: {$_SESSION['userID']}");
+        }
+
         Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
         GoToURL($MAIN_PAGE_URL);
     }
