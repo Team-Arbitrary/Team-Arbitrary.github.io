@@ -31,31 +31,31 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
   
 
-- ~~General Folder Name: upper CamelCase~~ 
+- General Folder Name: upper CamelCase 
 
   - Example:
 
   
 
-- ~~Code File Name [.html, .css, .js, .php]: upper CamelCase~~
+- Code File Name [.html, .css, .js, .php]: upper CamelCase
 
   - Example:
 
   
 
-- ~~Class Name~~, Function Name: upper CamelCase
+- Class Name, Function Name: upper CamelCase
 
   - Example:
 
   
 
-- Variable Name, ~~ID~~: lower camelCase
+- Variable Name, ID: lower camelCase
 
   - Example:
 
   
 
-- ~~Specific Resource File Name [.jpg, .png]: lower camelCase~~ + underscore separating "\-" 
+- Specific Resource File Name [.jpg, .png]: lower camelCase
   
   - Example:
 
@@ -65,21 +65,15 @@ In short, except for the parts that need to capture attention, use lower camelCa
 
 
 
-Chrome will automatically lowercase part of the directory or file name magically
-
-Yes, not all but part, speechless
-
-When defining classes in html, use lowercase letters as Chrome's CSS selectors occasionally convert uppercase letters in class names to lowercase
-
-
-
-
-
 ### Some Notes for Coding:
 
 Folder naming uses upper CamelCase, to eliminate "-" or "_" to reduce the length of names, to maintain a similar style to other kinds of programming project file structures, and to differentiate from resource files that represent specific instances
 
 Filenames are case-insensitive for files on the Mac and Windows default filesystems, but Linux is sensitive. This is just a reminder here.  ; )
+
+Note the address actually entered into the browser's address bar
+
+When updating css files, you need to right-click the file list in the network tab of chrome's developer tools and select clear browser cache to clear old css files, because until cleared [or expired?] Chrome will not refresh css files
 
 
 
