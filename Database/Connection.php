@@ -10,12 +10,12 @@ $SERVER_NAME = "localhost";
 // Testing Website
 $USERNAME = "id18780626_arbitrary_tests";
 $PASSWORD = "k6wBr^9q@ShCt1Ns";
-$DATABASE_NAME = "id18780626_arbitrary_tests_database"
+$DATABASE_NAME = "id18780626_arbitrary_tests_database";
 
 // Project Website
 //$USERNAME = "id18737052_projectschema";
 //$PASSWORD = "[vCQ=VZL\bR9n(m^";
-//$DATABASE_NAME = "id18737052_project_schema"
+//$DATABASE_NAME = "id18737052_project_schema";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 
