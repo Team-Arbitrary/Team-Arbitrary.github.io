@@ -51,16 +51,6 @@ if ($statement->num_rows == 1)
 
     if (password_verify($_POST['password'], $passwordHash))
     {
-//        // Create Logged Session, so we know the user is logged in, they basically act like cookies but remember the data on the server.
-//        if ( !session_regenerate_id(true) )
-//        {
-//            Alert("session no change!");
-//        }
-        if ( session_status() )
-        {
-            Alert("session active!");
-        }
-
         // Set Signed-In Flag
         $_SESSION['isSignedIn'] = TRUE;
 
@@ -68,8 +58,7 @@ if ($statement->num_rows == 1)
         $_SESSION['userId'] = $userId;
 
         Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
-        //GoToURL($MAIN_PAGE_URL);
-        exit();
+        GoToURL($MAIN_PAGE_URL);
     }
     else
     {
