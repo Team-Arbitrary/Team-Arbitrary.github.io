@@ -27,25 +27,31 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
 - Folder, File or Constant for descriptive or for configuration: ALL-CAPS naming + underscore separating "\_" 
 
-  - Example:
+  - Example: DOCUMENTATION, PRELIMINARY_INVESTIGATION_REPORT, SERVER_NAME
 
   
 
+- All naming in MySQL databases [database, table, and field]
+
+  - Example:  arbitrary_team_database, user, password_hash
+
+
+
 - General Folder Name: upper CamelCase 
 
-  - Example:
+  - Example: Database
 
   
 
 - Code File Name [.html, .css, .js, .php]: upper CamelCase
 
-  - Example:
+  - Example: Login.html, Login.css, Login.js, Login.php 
 
   
 
 - Class Name, Function Name: upper CamelCase
 
-  - Example:
+  - Example: GoToURL()
 
   
 
@@ -61,7 +67,7 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
 
 
-In short, except for the parts that need to capture attention, use lower camelCase for things that represent specific instances, and use upper CamelCase for upper-level instances that contain these instances.
+In short, except for the parts that need to capture attention and database, use lower camelCase for things that represent specific instances, and use upper CamelCase for upper-level instances that contain these instances.
 
 
 
@@ -71,9 +77,11 @@ Folder naming uses upper CamelCase, to eliminate "-" or "_" to reduce the length
 
 Filenames are case-insensitive for files on the Mac and Windows default filesystems, but Linux is sensitive. This is just a reminder here.  ; )
 
-Note the address actually entered into the browser's address bar
+Note the address actually entered into the browser's address bar.
 
-When updating css files, you need to right-click the file list in the network tab of chrome's developer tools and select clear browser cache to clear old css files, because until cleared [or expired?] Chrome will not refresh css files
+When you update the CSS file, you need to right-click the file list in the network tab of Chrome's developer tools and select clear browser cache, because Chrome will not load the new CSS file until the old CSS file is cleared [or expired?].
+
+The MySQL database automatically converts uppercase letters in most file names to lowercase letters in case-insensitive filesystems.
 
 
 

@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- database: `id18737052_project_schema`
+-- Database: `id18737052_project_schema`
 --
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password_hash`, `email`) VALUES
+INSERT INTO user (`id`, name, password_hash, `email`)VALUES
 (1, 'tyr123', 'zxcv7373', 'zxc123@126.com'),
 (2, 'abc', '776', NULL);
 
@@ -75,10 +75,10 @@ ALTER TABLE `session`
 --
 -- Indexes for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE user
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_id_uindex` (`id`),
-  ADD UNIQUE KEY `user_username_uindex` (`username`);
+  ADD UNIQUE KEY `user_username_uindex` (name);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -93,7 +93,7 @@ ALTER TABLE `session`
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `user`
+ALTER TABLE user
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -104,7 +104,7 @@ ALTER TABLE `user`
 -- Constraints for table `session`
 --
 ALTER TABLE `session`
-  ADD CONSTRAINT `User ID foreign` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `User ID foreign` FOREIGN KEY (`user_id`) REFERENCES user (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

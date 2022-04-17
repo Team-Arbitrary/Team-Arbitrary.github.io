@@ -17,15 +17,15 @@ $DATABASE_NAME = "arbitrary_team_database";
 //$PASSWORD = "[vCQ=VZL\bR9n(m^";
 //$DATABASE_NAME = "id18737052_project_schema"
 
-require_once "../utils.php";  // Load some common functions to reuse code
+require_once "../Utils.php";  // Load some common functions to reuse code
 
 // Try to connect
 $connection = new mysqli($SERVER_NAME, $USERNAME, $PASSWORD, $DATABASE_NAME);
 if ($connection->connect_error)
 {
-    exit("! database connection failed: $connection->connect_error");
+    exit("! Database connection failed: $connection->connect_error");
 }
 else
 {
-    LogAtConsole("database connection succeeded");
+    LogAtConsole("Database connection succeeded");
 }

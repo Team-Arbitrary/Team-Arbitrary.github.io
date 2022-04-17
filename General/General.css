@@ -28,12 +28,12 @@ body {
 }
 
 /*Block web code injection from unknown sources*/
-body > div.disclaimer {
+.disclaimer {
     display: none;
 }
 
-/*only for all header and footer of pages*/
-iframe.header,
+/*only for all header and Footer of pages*/
+.Header,
 .Footer {
     margin: 0;
     border-style: none;
