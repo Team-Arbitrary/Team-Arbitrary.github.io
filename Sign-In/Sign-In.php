@@ -52,7 +52,11 @@ if ($statement->num_rows == 1)
     if (password_verify($_POST['password'], $passwordHash))
     {
         // Create Logged Session, so we know the user is logged in, they basically act like cookies but remember the data on the server.
-        session_regenerate_id();
+        if ( !session_regenerate_id() )
+        {
+            Alert("session no change!");
+        }
+        
         $_SESSION['isLogged'] = TRUE;
 
         $_SESSION['userName'] = $_POST['userName'];
