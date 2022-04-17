@@ -43,6 +43,7 @@ jobs:
             LICENSE
             DESIGN/**
             DOCUMENTATION/**
+            assets/**
             Database/databaseSchema.sql
 
       - name: 🎉 Completion prompt

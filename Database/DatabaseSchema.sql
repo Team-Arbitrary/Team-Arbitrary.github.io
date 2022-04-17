@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2022 at 03:25 AM
+-- Generation Time: Apr 17, 2022 at 10:54 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -58,7 +58,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `password_hash`, `email`) VALUES
 (1, 'tyr123', 'zxcv7373', 'zxc123@126.com'),
-(2, 'abc', '776', NULL);
+(2, 'abc', '776', NULL),
+(5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', ''),
+(6, '999abc', '$2y$10$WSg.KeEpZVDZJucntE7gO.9HPWwPumGUuPSRvMBG5xGWqy.tl6wVm', '');
 
 --
 -- Indexes for dumped tables
@@ -94,7 +96,7 @@ ALTER TABLE `session`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
