@@ -15,11 +15,11 @@
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 $MAIN_PAGE_URL = "../Main.html";  // TODO Homepage url after Sign-In
 
-session_start();
+
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
-
+session_start();
 // Check if the Database connection exists.
 if ( !isset($connection) )
 {
