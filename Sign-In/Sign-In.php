@@ -57,7 +57,7 @@ if ($statement->num_rows == 1)
         $_SESSION['userID'] = $userID;
         session_write_close();
 
-        if ( session_status() === PHP_SESSION_ACTIVE )
+        if ( session_status() === PHP_SESSION_NONE )
         {
             Alert("session active, ".
                 "isSignedIn: {$_SESSION['isSignedIn']} ".
