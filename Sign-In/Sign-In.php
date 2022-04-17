@@ -59,7 +59,7 @@ if ($statement->num_rows == 1)
 
         if ( session_status() === PHP_SESSION_NONE )
         {
-            Alert("session active, ".
+            Alert("session NONE, ".
                 "isSignedIn: {$_SESSION['isSignedIn']} ".
                 "userName: {$_SESSION['userName']} ".
                 "userID: {$_SESSION['userID']}");
