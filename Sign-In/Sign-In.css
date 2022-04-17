@@ -32,7 +32,7 @@ form {
     padding-top: 20px;
 }
 
-form label {
+label {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,25 +1,11 @@
-<!--<section>-->
-<!--    TODO: Add fields and file to handle Sign-In. -->
-<!--     This should point to a .php file that handles the Sign-In by checking the $_POST superglobal-->
-<!--            and testing whether user input matches the hashed password in the Database. If so,-->
-<!--            mark the session as logged in. -->
-<!--            -->
-<!--    <form method="POST" action="">-->
-<!--        This should have username/password with appropriate HTML types. -->
-<!---->
-<!--    </form>-->
-<!--</section>-->
-
 <?php
 // Configuration
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-$MAIN_PAGE_URL = "../Main.html";  // TODO Homepage url after Sign-In
-
-
+$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities.html";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
-session_start();
+
 // Check if the Database connection exists.
 if ( !isset($connection) )
 {
@@ -65,7 +51,7 @@ if ($statement->num_rows == 1)
 
     if (password_verify($_POST['password'], $passwordHash))
     {
-        // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
+        // Create Logged Session, so we know the user is logged in, they basically act like cookies but remember the data on the server.
         session_regenerate_id();
         $_SESSION['isLogged'] = TRUE;
 
@@ -96,4 +82,3 @@ else
     Alert("! Database Error, Please contact the administrator");
 }
 GoToURL($SIGN_IN_PAGE_URL);
-?>

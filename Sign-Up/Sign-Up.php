@@ -1,9 +1,7 @@
 <?php
 // Configuration
 $SIGN_UP_PAGE_URL = "../Sign-Up/Sign-Up.html";
-$MAIN_PAGE_URL = "../Main.html";  // TODO Homepage url
-
-session_start();
+$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities.html";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
@@ -83,3 +81,11 @@ if ( !$statement->execute() )
 
 Alert("Congratulations, {$_POST['userName']}, Successfully signed up an account");
 GoToURL($MAIN_PAGE_URL);
+
+
+// Create Logged Session
+session_regenerate_id();
+$_SESSION['isLogged'] = TRUE;
+
+$_SESSION['userName'] = $_POST['userName'];
+$_SESSION['userId'] = $userId;  // TODO 向数据库查询user id 或直接调用Sign-In.php
