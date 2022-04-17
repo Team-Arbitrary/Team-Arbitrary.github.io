@@ -68,8 +68,16 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
     }
     else
     {
-        // Incorrect username or The Database has more than one identical username that the user entered
-        Alert("Incorrect Username or Database Error!");
+        if ($statement->num_rows < 1)
+        {
+            Alert("Incorrect Username!");
+        }
+
+        if ($statement->num_rows > 1)
+        {
+            Alert("! Database Error: The Database has more than one identical username that the user entered");
+        }
+
         GoToURL($LOGIN_PAGE_URL);
     }
 

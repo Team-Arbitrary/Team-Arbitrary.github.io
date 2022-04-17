@@ -21,6 +21,14 @@ Platform Tools:
 
 
 
+## Temporary Non-Normative Process Design Diagram
+
+
+
+
+
+
+
 ## Coding Conventions:
 
 Abbreviations are not used in any naming to avoid forgetting, misunderstanding, and incomprehension
@@ -57,13 +65,13 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
 - Variable Name, ID: lower camelCase
 
-  - Example:
+  - Example: passwordHash, 
 
   
 
 - Specific Resource File Name [.jpg, .png]: lower camelCase
   
-  - Example:
+  - Example: 
 
 
 
