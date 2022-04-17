@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2022 at 12:41 PM
+-- Generation Time: Apr 17, 2022 at 03:25 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id18737052_project_schema`
+-- Database: `arbitrary_team_database`
 --
 
 -- --------------------------------------------------------
@@ -33,11 +33,11 @@ CREATE TABLE `session` (
   `user_id` int(11) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date NOT NULL,
-  `employee_status` enum('fulltime','adjunct') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `organization_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `event` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `presenter` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `employee_status` enum('fulltime','adjunct') CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `organization_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `activity` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `presenter` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -47,16 +47,16 @@ CREATE TABLE `session` (
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO user (`id`, name, password_hash, `email`)VALUES
+INSERT INTO `user` (`id`, `name`, `password_hash`, `email`) VALUES
 (1, 'tyr123', 'zxcv7373', 'zxc123@126.com'),
 (2, 'abc', '776', NULL);
 
@@ -75,10 +75,10 @@ ALTER TABLE `session`
 --
 -- Indexes for table `user`
 --
-ALTER TABLE user
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_id_uindex` (`id`),
-  ADD UNIQUE KEY `user_username_uindex` (name);
+  ADD UNIQUE KEY `user_name_uindex` (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -93,7 +93,7 @@ ALTER TABLE `session`
 --
 -- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE user
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -104,7 +104,7 @@ ALTER TABLE user
 -- Constraints for table `session`
 --
 ALTER TABLE `session`
-  ADD CONSTRAINT `User ID foreign` FOREIGN KEY (`user_id`) REFERENCES user (`id`);
+  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

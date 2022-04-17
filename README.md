@@ -39,7 +39,7 @@ Abbreviations are not used in any naming to avoid forgetting, misunderstanding, 
 
 - General Folder Name: upper CamelCase 
 
-  - Example: Database
+  - Example: Footer
 
   
 
