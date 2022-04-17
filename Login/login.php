@@ -1,6 +1,6 @@
 <!--<section>-->
-<!--    TODO: Add fields and file to handle login. -->
-<!--     This should point to a .php file that handles the login by checking the $_POST superglobal-->
+<!--    TODO: Add fields and file to handle Login. -->
+<!--     This should point to a .php file that handles the Login by checking the $_POST superglobal-->
 <!--            and testing whether user input matches the hashed password in the database. If so,-->
 <!--            mark the session as logged in. -->
 <!--            -->
@@ -12,8 +12,8 @@
 
 <?php
 // Configuration
-$LOGIN_PAGE_URL = "../login/login.html";
-$MAIN_PAGE_URL = "../main.html";  // TODO Homepage url after login
+$LOGIN_PAGE_URL = "../Login/login.html";
+$MAIN_PAGE_URL = "../main.html";  // TODO Homepage url after Login
 
 session_start();
 
@@ -57,7 +57,7 @@ if ($statement = $connection->prepare("SELECT user.id, user.password_hash FROM u
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
 
-            Alert("login Successful! Welcome back, {$_SESSION['name']} (*^▽^*)");
+            Alert("Login Successful! Welcome back, {$_SESSION['name']} (*^▽^*)");
             GoToURL($MAIN_PAGE_URL);
         }
         else
