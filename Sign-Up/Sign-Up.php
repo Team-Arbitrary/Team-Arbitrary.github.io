@@ -80,12 +80,14 @@ if ( !$statement->execute() )
 //$connection->close();  // close the connection to the Database
 
 Alert("Congratulations, {$_POST['userName']}, Successfully signed up an account");
-GoToURL($MAIN_PAGE_URL);
 
+
+//GO TO Sign-In.php
+GoToURL("../Sign-In/Sign-In.php");
 
 // Create Logged Session
-session_regenerate_id();
-$_SESSION['isLogged'] = TRUE;
-
-$_SESSION['userName'] = $_POST['userName'];
-$_SESSION['userId'] = $userId;  // TODO 向数据库查询user id 或直接调用Sign-In.php
+//session_regenerate_id();
+//$_SESSION['isLogged'] = TRUE;
+//
+//$_SESSION['userName'] = $_POST['userName'];
+//$_SESSION['userId'] = $userId;  // TODO 向数据库查询user id 或直接调用Sign-In.php
