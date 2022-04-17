@@ -3,6 +3,8 @@
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 $MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.php";
 
+session_start();
+
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
 
@@ -51,7 +53,6 @@ if ($statement->num_rows == 1)
 
     if (password_verify($_POST['password'], $passwordHash))
     {
-        session_start();
         $_SESSION['isSignedIn'] = TRUE;  // Set Signed-In Flag
         $_SESSION['userName'] = $_POST['userName'];
         $_SESSION['userID'] = $userID;
@@ -67,6 +68,7 @@ if ($statement->num_rows == 1)
 
         Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
         GoToURL($MAIN_PAGE_URL);
+//        exit();
     }
     else
     {
