@@ -1,7 +1,7 @@
 <?php
 // Configuration
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.html";
+$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.php";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
@@ -43,7 +43,7 @@ $statement->store_result();
 
 if ($statement->num_rows == 1)
 {
-    $statement->bind_result($userId, $passwordHash);
+    $statement->bind_result($userID, $passwordHash);
     $statement->fetch();  // Fetch results from a prepared SQL statement into the bound variables
 
     //$statement->close();  // Close the SQL prepared statement
@@ -51,11 +51,11 @@ if ($statement->num_rows == 1)
 
     if (password_verify($_POST['password'], $passwordHash))
     {
-        // Set Signed-In Flag
-        $_SESSION['isSignedIn'] = TRUE;
-
+        session_start();
+        $_SESSION['isSignedIn'] = TRUE;  // Set Signed-In Flag
         $_SESSION['userName'] = $_POST['userName'];
-        $_SESSION['userId'] = $userId;
+        $_SESSION['userID'] = $userID;
+        session_write_close();
 
         Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
         GoToURL($MAIN_PAGE_URL);

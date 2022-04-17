@@ -1,9 +1,10 @@
 <?php
 require_once "Utils.php";  // Load some common functions to reuse code
 
-if( !session_start() )
+session_start();
+if( session_status() !== PHP_SESSION_ACTIVE )
 {
-    Alert("session no start!");
+    Alert("No Active Session!");
     GoToURL("index.php");
 }
 

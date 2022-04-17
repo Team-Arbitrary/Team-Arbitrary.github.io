@@ -32,6 +32,7 @@ if ( !$statement = $connection->prepare("SELECT user.id FROM user WHERE user.nam
 
 // Bind parameters (s = string, i = int, d = double, b = BLOB[binary large object])
 $statement->bind_param('s', $_POST['userName']);
+
 if ( !$statement->execute() )
 {
     Alert("! Failed to query the database, Please contact administrator");
