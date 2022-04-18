@@ -26,4 +26,4 @@ if ($connection->connect_error)
     exit("! Database connection failed: $connection->connect_error");
 }
 
-LogAtConsole("Database connection succeeded");
+//LogAtConsole("Database connection succeeded");

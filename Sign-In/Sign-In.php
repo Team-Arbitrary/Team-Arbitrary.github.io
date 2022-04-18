@@ -3,8 +3,6 @@
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 $MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.php";
 
-session_start();
-
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
 
@@ -16,7 +14,19 @@ if ( !isset($connection) )
 }
 
 // Check if the username and the password exists.
-if ( !isset($_POST['userName'], $_POST['password']) )
+session_start();
+if ( isset($_POST['userName'], $_POST['password']) )
+{
+    $postedUserName = $_POST['userName'];
+    $postedPassword = $_POST['password'];
+}
+elseif (isset($_SESSION['userName'], $_SESSION['password']))
+{
+    $postedUserName = $_SESSION['userName'];
+    $postedPassword = $_SESSION['password'];
+    unset($_SESSION['password']);
+}
+else
 {
     Alert("Please fill both the username and password fields!");
     GoToURL($SIGN_IN_PAGE_URL);
@@ -32,7 +42,7 @@ if ( !$statement = $connection->prepare("SELECT user.id, user.password_hash FROM
 }
 
 // Bind parameters (s = string, i = int, d = double, b = BLOB[binary large object])
-$statement->bind_param('s', $_POST['userName']);
+$statement->bind_param('s', $postedUserName);
 
 
 // Execute
@@ -51,11 +61,11 @@ if ($statement->num_rows == 1)
     //$statement->close();  // Close the SQL prepared statement
     //$connection->close(); // close the connection to the Database
 
-    if (password_verify($_POST['password'], $passwordHash))
+    if (password_verify($postedPassword, $passwordHash))
     {
-        $_SESSION['isSignedIn'] = TRUE;  // Set Signed-In Flag
-        $_SESSION['userName'] = $_POST['userName'];
+        $_SESSION['isSignedIn'] = TRUE;  // Set Signed-In Flag 似乎没什么用
         $_SESSION['userID'] = $userID;
+        $_SESSION['userName'] = $postedUserName;
         session_write_close();
 
         if ( session_status() === PHP_SESSION_NONE )
@@ -66,9 +76,8 @@ if ($statement->num_rows == 1)
                 "userID: {$_SESSION['userID']}");
         }
 
-        Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
+        Alert("Sign In Successful! Welcome, {$_SESSION['userName']} (*^▽^*)");
         GoToURL($MAIN_PAGE_URL);
-//        exit();
     }
     else
     {

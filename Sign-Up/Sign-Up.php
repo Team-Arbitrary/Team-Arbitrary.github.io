@@ -1,7 +1,7 @@
 <?php
 // Configuration
 $SIGN_UP_PAGE_URL = "../Sign-Up/Sign-Up.html";
-//$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities.html";
+$SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
@@ -80,15 +80,16 @@ if ( !$statement->execute() )
 //$statement->close();  // Close the SQL prepared statement
 //$connection->close();  // close the connection to the Database
 
+
+//Start Session
+session_start();
+$_SESSION['userName'] = $_POST['userName'];
+$_SESSION['password'] = $_POST['password'];
+session_write_close();
+
 Alert("Congratulations, {$_POST['userName']}, Successfully signed up an account");
 
-
 //GO TO Sign-In.php
-GoToURL("../Sign-In/Sign-In.php");
+GoToURL($SIGN_IN_PHP_URL);
 
-// Create Logged Session
-//session_regenerate_id();
-//$_SESSION['isLogged'] = TRUE;
-//
-//$_SESSION['userName'] = $_POST['userName'];
-//$_SESSION['userId'] = $userId;  // TODO 向数据库查询user id 或直接调用Sign-In.php
+// TODO 根据session是否有userID判断是否已登录
