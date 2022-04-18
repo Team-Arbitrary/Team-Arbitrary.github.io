@@ -1,15 +1,15 @@
 <?php
 function LogAtConsole($message)
 {
-    echo("<script type='text/javascript'> console.log('$message'); </script>");
+    echo("<script> console.log('$message'); </script>");
 }
 
 function Alert($message)
 {
-    echo("<script type='text/javascript'> window.alert('$message'); </script>");
+    echo("<script> window.alert('$message'); </script>");
 }
 
 function GoToURL($url)
 {
-    exit("<script type='text/javascript'> window.location.href='$url'; </script>");
+    exit("<script> window.location.href='$url'; </script>");
 }

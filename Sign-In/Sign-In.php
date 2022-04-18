@@ -1,7 +1,7 @@
 <?php
 // Configuration
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.php";
+$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.html";
 
 require_once "../Utils.php";  // Load some common functions to reuse code
 require_once "../Database/Connection.php";  // connect Database
@@ -15,12 +15,12 @@ if ( !isset($connection) )
 
 // Check if the username and the password exists.
 session_start();
-if ( isset($_POST['userName'], $_POST['password']) )
+if ( isset($_POST['userName'], $_POST['password']) )  // From sign-in action of user
 {
     $postedUserName = $_POST['userName'];
     $postedPassword = $_POST['password'];
 }
-elseif (isset($_SESSION['userName'], $_SESSION['password']))
+elseif (isset($_SESSION['userName'], $_SESSION['password']))  // From sign-up action of user
 {
     $postedUserName = $_SESSION['userName'];
     $postedPassword = $_SESSION['password'];
@@ -63,20 +63,27 @@ if ($statement->num_rows == 1)
 
     if (password_verify($postedPassword, $passwordHash))
     {
-        $_SESSION['isSignedIn'] = TRUE;  // Set Signed-In Flag 似乎没什么用
         $_SESSION['userID'] = $userID;
-        $_SESSION['userName'] = $postedUserName;
-        session_write_close();
 
-        if ( session_status() === PHP_SESSION_NONE )
+        if ( !isset($_SESSION['userName']) )  // From sign-in action of user
         {
-            Alert("session NONE, ".
-                "isSignedIn: {$_SESSION['isSignedIn']} ".
-                "userName: {$_SESSION['userName']} ".
-                "userID: {$_SESSION['userID']}");
+            $_SESSION['userName'] = $postedUserName;
+            Alert("Sign In Successful! Welcome back, {$_SESSION['userName']} (*^▽^*)");
+        }
+        else  // From sign-up action of user
+        {
+            Alert("Sign In Successful! Welcome, {$_SESSION['userName']} (*^▽^*)");
         }
 
-        Alert("Sign In Successful! Welcome, {$_SESSION['userName']} (*^▽^*)");
+        session_write_close();
+
+//        if ( session_status() === PHP_SESSION_NONE )
+//        {
+//            Alert("session NONE, ".
+//                "userName: {$_SESSION['userName']} ".
+//                "userID: {$_SESSION['userID']}");
+//        }
+
         GoToURL($MAIN_PAGE_URL);
     }
     else

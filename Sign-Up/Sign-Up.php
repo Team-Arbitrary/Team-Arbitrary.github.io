@@ -89,7 +89,5 @@ session_write_close();
 
 Alert("Congratulations, {$_POST['userName']}, Successfully signed up an account");
 
-//GO TO Sign-In.php
+//Execute Sign-In.php
 GoToURL($SIGN_IN_PHP_URL);
-
-// TODO 根据session是否有userID判断是否已登录

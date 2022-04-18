@@ -1,8 +1,11 @@
 @charset "utf-8";
+
 body table {
-	border-style: none;
 	width: auto;
+	border-bottom-width: thin;
+	border-style: none none solid;
 }
+
 .InformationName {
 	text-align: end;
 }

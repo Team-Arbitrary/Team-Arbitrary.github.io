@@ -44,7 +44,7 @@ jobs:
             DESIGN/**
             DOCUMENTATION/**
             assets/**
-            Database/databaseSchema.sql
+            Database/DatabaseSchema.sql
 
       - name: 🎉 Completion prompt
         run: |
