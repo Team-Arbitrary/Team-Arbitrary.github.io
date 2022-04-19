@@ -2,7 +2,7 @@
 
 html {
     font-family: 'Consolas';
-    background-color: rgb(221, 240, 255);
+    background-color: rgba(180, 210, 255, 0.4);
 }
 
 button {
@@ -22,13 +22,6 @@ button {
 
 h1 {
     color:rgb(26, 65, 104)
-}
-
-.login {
-    font-family: 'Consolas';
-    padding-top: 1rem;
-    font-size: 2.5rem;
-    font-style: italic;
 }
 
 p {
