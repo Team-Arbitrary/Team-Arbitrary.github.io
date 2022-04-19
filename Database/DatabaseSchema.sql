@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 18, 2022 at 04:24 PM
+-- Generation Time: Apr 19, 2022 at 10:14 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -25,19 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activity`
+-- Table structure for table `event`
 --
 
-CREATE TABLE `activity` (
+CREATE TABLE `event` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `activity` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `user_status` enum('fulltime','adjunct') COLLATE utf8mb4_bin NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `type` enum('In-Person','Virtual') COLLATE utf8mb4_bin NOT NULL,
   `start_time` timestamp NOT NULL,
   `end_time` timestamp NOT NULL,
+  `organization` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `presenter` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `organization` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
+  `description` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `event`
+--
+
+INSERT INTO `event` (`id`, `user_id`, `name`, `type`, `start_time`, `end_time`, `organization`, `presenter`, `description`) VALUES
+(1, 6, 'Preparation for class A', 'In-Person', '2022-04-06 13:56:49', '2022-04-09 13:59:38', 'Jackson College', 'Michael', 'This is a necessary course.'),
+(2, 6, 'Preparation for class B', 'Virtual', '2022-04-06 13:56:49', '2022-04-09 13:59:38', '', 'Michael', 'This is a necessary course.');
 
 -- --------------------------------------------------------
 
@@ -68,9 +77,9 @@ INSERT INTO `user` (`id`, `name`, `password_hash`, `email`) VALUES
 --
 
 --
--- Indexes for table `activity`
+-- Indexes for table `event`
 --
-ALTER TABLE event
+ALTER TABLE `event`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `activity_id_uindex` (`id`),
   ADD KEY `activity_fk_user_id` (`user_id`);
@@ -88,10 +97,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `activity`
+-- AUTO_INCREMENT for table `event`
 --
-ALTER TABLE event
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `event`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -104,9 +113,9 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `activity`
+-- Constraints for table `event`
 --
-ALTER TABLE event
+ALTER TABLE `event`
   ADD CONSTRAINT `activity_fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
