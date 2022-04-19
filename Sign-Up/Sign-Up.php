@@ -3,17 +3,11 @@
 $SIGN_UP_PAGE_URL = "../Sign-Up/Sign-Up.html";
 $SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 
+
 require_once "../Utils.php";  // Load some common functions to reuse code
-require_once "../Database/Connection.php";  // connect Database
 
-// Check if the Database connection exists.
-if ( !isset($connection) )
-{
-    Alert("! Could not find Database connection, Please contact administrator");
-    GoToURL($SIGN_UP_PAGE_URL);
-}
 
-// Check if the username and the password exists.
+// Check If The Username And The Password Exists
 if ( !isset($_POST['userName'], $_POST['password']) )
 {
     Alert("Please fill both the username and password fields!");
@@ -21,7 +15,16 @@ if ( !isset($_POST['userName'], $_POST['password']) )
 }
 
 
-// Check if the account exists in the Database
+// Connect Database
+require_once "../Database/Connection.php";
+if ( !isset($connection) )  // Check if the Database connection exists
+{
+    Alert("! Could not find Database connection, Please contact administrator");
+    GoToURL($SIGN_UP_PAGE_URL);
+}
+
+
+// Check If The Account Exists In The Database
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 // and Statements can be reused without repeated loading.
 if ( !$statement = $connection->prepare("SELECT user.id FROM user WHERE user.name = ?") )
@@ -89,5 +92,4 @@ session_write_close();
 
 Alert("Congratulations, {$_POST['userName']}, Successfully signed up an account");
 
-//Execute Sign-In.php
-GoToURL($SIGN_IN_PHP_URL);
+GoToURL($SIGN_IN_PHP_URL);  //Execute Sign-In.php

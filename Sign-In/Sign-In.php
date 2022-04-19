@@ -3,17 +3,11 @@
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 $MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.html";
 
+
 require_once "../Utils.php";  // Load some common functions to reuse code
-require_once "../Database/Connection.php";  // connect Database
 
-// Check if the Database connection exists.
-if ( !isset($connection) )
-{
-    Alert("! Could not find Database connection, Please contact the administrator");
-    GoToURL($SIGN_IN_PAGE_URL);
-}
 
-// Check if the username and the password exists.
+// Check If The Username And The Password Exists
 session_start();
 if ( isset($_POST['userName'], $_POST['password']) )  // From sign-in action of user
 {
@@ -33,6 +27,16 @@ else
 }
 
 
+// Connect Database
+require_once "../Database/Connection.php";
+if ( !isset($connection) )  // Check if the Database connection exists
+{
+    Alert("! Could not find Database connection, Please contact the administrator");
+    GoToURL($SIGN_IN_PAGE_URL);
+}
+
+
+// Query The User ID And Password of The User
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
 // and Statements can be reused without repeated loading.
 if ( !$statement = $connection->prepare("SELECT user.id, user.password_hash FROM user WHERE user.name = ?") )

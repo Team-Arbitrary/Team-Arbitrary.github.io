@@ -70,7 +70,7 @@ INSERT INTO `user` (`id`, `name`, `password_hash`, `email`) VALUES
 --
 -- Indexes for table `activity`
 --
-ALTER TABLE `activity`
+ALTER TABLE event
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `activity_id_uindex` (`id`),
   ADD KEY `activity_fk_user_id` (`user_id`);
@@ -90,7 +90,7 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for table `activity`
 --
-ALTER TABLE `activity`
+ALTER TABLE event
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -106,7 +106,7 @@ ALTER TABLE `user`
 --
 -- Constraints for table `activity`
 --
-ALTER TABLE `activity`
+ALTER TABLE event
   ADD CONSTRAINT `activity_fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
 COMMIT;
 

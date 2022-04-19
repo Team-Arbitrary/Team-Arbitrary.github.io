@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-body table {
+table {
 	width: auto;
 	border-bottom-width: thin;
 	border-style: none none solid;
 }
 
-.InformationName {
+th {
 	text-align: end;
 }

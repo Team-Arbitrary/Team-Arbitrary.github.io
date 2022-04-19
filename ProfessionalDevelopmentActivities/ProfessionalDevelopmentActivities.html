@@ -2,41 +2,41 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Professional Development Events</title>
 <link href="ProfessionalDevelopmentActivities.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="ProfessionalDevelopmentActivities.php?"></script>
+<!--<script src="ProfessionalDevelopmentActivities.php?"></script>-->
 </head>
 
 <body>
 <table>
 	<tbody>
 		<tr>
-			<th class="InformationName" scope="row">Event:</th>
-			<td class="Information">Preparation for class</td>
+			<th scope="row">Event:</th>
+			<td class="Name"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">Type:</th>
-			<td class="Information">In-Person</td>
+			<th scope="row">Type:</th>
+			<td class="Type"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">Begin:</th>
-			<td class="Information">4/6/2022</td>
+			<th scope="row">Begin:</th>
+			<td class="StartTime"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">End:</th>
-			<td class="Information">4/9/2022</td>
+			<th scope="row">End:</th>
+			<td class="EndTime"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">Organization:</th>
-			<td class="Information">Jackson College</td>
+			<th scope="row">Organization:</th>
+			<td class="Organization"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">Presenter:</th>
-			<td class="Information">Michael</td>
+			<th scope="row">Presenter:</th>
+			<td class="Presenter"></td>
 		</tr>
 		<tr>
-			<th class="InformationName" scope="row">Description:</th>
-			<td class="Information">This is a necessary course.</td>
+			<th scope="row">Description:</th>
+			<td class="Description"></td>
 		</tr>
 		<tr>
 			<td><input type="button" value="Delete Activity"></td>
@@ -44,4 +44,43 @@
 	</tbody>
 </table>
 </body>
+
+<script>  // todo 在加载时自动运行更新函数
+	const xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET","ProfessionalDevelopmentActivities.php?",false);
+	xmlHttp.send();
+
+	// todo 如果服务器发来的不是json就做其它事
+	// alert(Event.name);
+
+	const events = JSON.parse(xmlHttp.responseText);
+
+	// eventTable = document.createElement("table");
+	// eventTableCon = document.createTextNode("");
+	// let eventTable = document.getElementsByTagName("table")[0];
+
+	UpdateEventTablesInHTML(events);
+
+	function UpdateEventTablesInHTML(events) {
+		const eventTable = document.querySelector("table");
+
+		let eventTables = [];
+		for (const event of events) {
+			// 填写每一个Event表格
+			eventTable.querySelector(".Name").innerHTML = event.name;
+			eventTable.querySelector(".Type").innerHTML = event.type;
+			eventTable.querySelector(".StartTime").innerHTML = event.startTime;
+			eventTable.querySelector(".EndTime").innerHTML = event.endTime;
+			eventTable.querySelector(".Organization").innerHTML = event.organization;
+			eventTable.querySelector(".Presenter").innerHTML = event.presenter;
+			eventTable.querySelector(".Description").innerHTML = event.description;
+
+			// 不断将新的Event表格加入eventTables数组中
+			eventTables.push(eventTable.outerHTML);  // todo eventTables[] = value
+		}
+
+		eventTable.outerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
+	}
+</script>
+
 </html>
