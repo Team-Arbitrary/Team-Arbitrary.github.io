@@ -1,7 +1,7 @@
 <?php
 // Configuration
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-$MAIN_PAGE_URL = "../ProfessionalDevelopmentEvents/ProfessionalDevelopmentEvents.html";
+$MAIN_PAGE_URL = "../Events/Events.html";
 
 
 require_once "../Utils.php";  // Load some common functions to reuse code
