@@ -2,7 +2,7 @@
 // Configuration
 $SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 $SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-$MAIN_PAGE_URL = "../ProfessionalDevelopmentActivities/ProfessionalDevelopmentActivities.html";
+$MAIN_PAGE_URL = "../ProfessionalDevelopmentEvents/ProfessionalDevelopmentEvents.html";
 
 
 require_once "../Utils.php";  // Load some common functions to reuse code
@@ -119,7 +119,7 @@ else{
 //    AlertAtJavaScript("No Active Session! ".
 //                      "userName: {$_SESSION['userName']} ".
 //                      "userID: {$_SESSION['userID']}");
-//    GoToURL("ProfessionalDevelopmentActivities.php");
+//    GoToURL("ProfessionalDevelopmentEvents.php");
 //}
 //if ( session_status() === PHP_SESSION_ACTIVE )
 //{
