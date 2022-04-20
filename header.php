@@ -10,7 +10,7 @@
         <header>
             <!-- TODO: Add nav w/ links to login, professional-dev form, etc... -->
             <h2 class="header-title text-xl margin-y-0 padding-1">
-            Professional Development Tool
+            Professional Development Notebook
             </h2>
 
             <nav>
