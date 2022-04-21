@@ -4,83 +4,56 @@
 <meta charset="utf-8">
 <title>Professional Development Events</title>
 <link href="Events.css" rel="stylesheet" type="text/css">
-<!--<script src="Events.php?"></script>-->
 </head>
 
-<body>
-<table>
-	<tbody>
-		<tr>
-			<th scope="row">Event:</th>
-			<td class="Name"></td>
-		</tr>
-		<tr>
-			<th scope="row">Type:</th>
-			<td class="Type"></td>
-		</tr>
-		<tr>
-			<th scope="row">Begin:</th>
-			<td class="StartTime"></td>
-		</tr>
-		<tr>
-			<th scope="row">End:</th>
-			<td class="EndTime"></td>
-		</tr>
-		<tr>
-			<th scope="row">Organization:</th>
-			<td class="Organization"></td>
-		</tr>
-		<tr>
-			<th scope="row">Presenter:</th>
-			<td class="Presenter"></td>
-		</tr>
-		<tr>
-			<th scope="row">Description:</th>
-			<td class="Description"></td>
-		</tr>
-		<tr>
-			<td><input type="button" value="Delete Activity"></td>
-		</tr>
-	</tbody>
-</table>
+<body onpageshow="UpdateEventTables()">
+<input type="button" value="Update Events" onClick="UpdateEventTables()">
+
+<a href="Sign-Out.php">
+	<input type="button" value="Sign out">
+</a>
+
+<div>
+	<table>
+		<tbody>
+			<tr>
+				<th scope="row">Event:</th>
+				<td class="Name"></td>
+			</tr>
+			<tr>
+				<th scope="row">Type:</th>
+				<td class="Type"></td>
+			</tr>
+			<tr>
+				<th scope="row">Begin:</th>
+				<td class="StartTime"></td>
+			</tr>
+			<tr>
+				<th scope="row">End:</th>
+				<td class="EndTime"></td>
+			</tr>
+			<tr>
+				<th scope="row">Organization:</th>
+				<td class="Organization"></td>
+			</tr>
+			<tr>
+				<th scope="row">Presenter:</th>
+				<td class="Presenter"></td>
+			</tr>
+			<tr>
+				<th scope="row">Description:</th>
+				<td class="Description"></td>
+			</tr>
+			<tr>
+				<td><form action="Delete.php" method="post">
+					<input type="hidden" class="ID" name="id">
+					<input type="submit" value="Delete Event">
+				</form></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 </body>
 
-<script>  // todo 在加载时自动运行更新函数
-	const xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET","ProfessionalDevelopmentActivities.php?",false);
-	xmlHttp.send();
-
-	// todo 如果服务器发来的不是json就做其它事
-	// alert(Event.name);
-
-	const events = JSON.parse(xmlHttp.responseText);
-
-	// eventTable = document.createElement("table");
-	// eventTableCon = document.createTextNode("");
-	// let eventTable = document.getElementsByTagName("table")[0];
-
-	UpdateEventTablesInHTML(events);
-
-	function UpdateEventTablesInHTML(events) {
-		const eventTable = document.querySelector("table");
-
-		let eventTables = [];
-		for (const event of events) {
-			// 填写每一个Event表格
-			eventTable.querySelector(".Name").innerHTML = event.name;
-			eventTable.querySelector(".Type").innerHTML = event.type;
-			eventTable.querySelector(".StartTime").innerHTML = event.startTime;
-			eventTable.querySelector(".EndTime").innerHTML = event.endTime;
-			eventTable.querySelector(".Organization").innerHTML = event.organization;
-			eventTable.querySelector(".Presenter").innerHTML = event.presenter;
-			eventTable.querySelector(".Description").innerHTML = event.description;
-
-			// 不断将新的Event表格加入eventTables数组中
-			eventTables.push(eventTable.outerHTML);  // todo eventTables[] = value
-		}
-
-		eventTable.outerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
-	}
-</script>
-
+<script src="Events.js"></script>
 </html>

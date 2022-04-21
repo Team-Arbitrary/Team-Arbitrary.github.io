@@ -9,6 +9,7 @@ function Alert($message)
     echo("<script> window.alert('$message'); </script>");
 }
 
+// TODO by JSON
 function AlertAtJavaScript($message)
 {
     echo("window.alert('$message');");
