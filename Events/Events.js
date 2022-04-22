@@ -33,13 +33,12 @@ function HandleErrors(errorMessage)
     eventTableArea.innerHTML = '';  //Empty the events in the event tables area
     window.alert(errorMessage);
 
-    if (errorMessage === "Automatically sign in ...")
-    {
-        window.location.href=SIGN_IN_PHP_URL;
-    }
-    else if(errorMessage === "The session has expired or the account is not signed in")
-    {
-        window.location.href=SIGN_IN_PAGE_URL;
+    switch (errorMessage) {
+        case "Automatically sign in ...":
+            window.location.href=SIGN_IN_PHP_URL;
+            break;
+        case "The session has expired or the account is not signed in":
+            window.location.href=SIGN_IN_PAGE_URL;
     }
 }
 

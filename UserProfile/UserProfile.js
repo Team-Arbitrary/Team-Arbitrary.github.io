@@ -1,28 +1,32 @@
-function UpdateEventTablesInHTML(user)
+function UpdateUserInformationInHTML(user)
 {
     document.querySelector("#userName").value = user.name;
 
-    document.querySelector(".Type").innerHTML = event.type;
-    document.querySelector(".StartTime").innerHTML = event.startTime;
-    document.querySelector(".EndTime").innerHTML = event.endTime;
-    document.querySelector(".Organization").innerHTML = event.organization;
-    document.querySelector(".Presenter").innerHTML = event.presenter;
-    document.querySelector(".Description").innerHTML = event.description;
+    switch (user.status) {
+        case "Full-Time":
+            document.querySelector("#full-TimeStatus").checked = true;
+            break;
+        case "Adjunct":
+            document.querySelector("#adjunctStatus").checked = true;
+            break;
+        case "Uncertain":
+            document.querySelector("#uncertainStatus").checked = true;
+    }
+
+    document.querySelector("#email").value = user.email;
 }
 
 
 function HandleErrors(errorMessage)
 {
-    eventTableArea.innerHTML = '';  //Empty the events in the event tables area
     window.alert(errorMessage);
 
-    if (errorMessage === "Automatically sign in ...")
-    {
-        window.location.href=SIGN_IN_PHP_URL;
-    }
-    else if(errorMessage === "The session has expired or the account is not signed in")
-    {
-        window.location.href=SIGN_IN_PAGE_URL;
+    switch (errorMessage) {
+        case "Automatically sign in ...":
+            window.location.href=SIGN_IN_PHP_URL;
+            break;
+        case "The session has expired or the account is not signed in":
+            window.location.href=SIGN_IN_PAGE_URL;
     }
 }
 
@@ -30,17 +34,17 @@ function HandleErrors(errorMessage)
 const xmlHttp = new XMLHttpRequest();
 
 
-function UpdateEventTables()
+function UpdateUserInformation()
 {
     xmlHttp.open("GET","Update.php?",false);
     xmlHttp.send();
 
     try
     {
-        const events = JSON.parse(xmlHttp.responseText);
-        if(typeof events == 'object' && events)
+        const user = JSON.parse(xmlHttp.responseText);
+        if(typeof user == 'object' && user)
         {
-            UpdateEventTablesInHTML(events);
+            UpdateUserInformationInHTML(user[0]);
         }
         else  // responseText 中的内容，是服务器传输的错误信息，不是 JSON 形式的数据
         {
@@ -53,19 +57,19 @@ function UpdateEventTables()
     }
 }
 
-
-function DeleteEventTable(formElement)
+// Todo 修改
+function ChangeUserInformation(formElement)
 {
-    if (window.confirm("Are you sure you want to delete this event?"))
+    if (window.confirm("Are you sure you want to Change Your Information?"))
     {
-        xmlHttp.open("POST","Delete.php",false);
-        const deleteButton = formElement.querySelector(".DeleteButton");
+        xmlHttp.open("POST","Change.php",false);
+        const changeButton = formElement.querySelector("#ChangeButton");
 
-        deleteButton.disabled=true;
+        changeButton.disabled=true;
         xmlHttp.send(new FormData(formElement));
 
         window.alert(xmlHttp.responseText);
-        deleteButton.disabled=false;
+        changeButton.disabled=false;
         return true;  // 浏览器自动刷新页面
     }
     return false;  // 拒绝浏览器自动刷新页面

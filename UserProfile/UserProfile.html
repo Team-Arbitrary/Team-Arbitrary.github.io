@@ -5,8 +5,8 @@
 <title>User Profile</title>
 </head>
 
-<body>
-<form>
+<body onpageshow="UpdateUserInformation()">
+<form method="post" onsubmit="return ChangeUserInformation(this)">
 <label>Username:
 	<input type="text" id="userName" name="userName" required></label>
 
@@ -26,9 +26,12 @@
 </p>
 	
 <label>Email:
-	<input type="text" id="email" name="email" required></label>
+	<input type="text" id="email" name="email"></label>
 
-<input type="submit" value="Change User Information">
+<br><input type="submit" id="ChangeButton" value="Change User Information">
+	
 </form>
 </body>
+
+<script src="UserProfile.js"></script>
 </html>
