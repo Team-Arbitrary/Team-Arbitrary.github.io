@@ -1,5 +1,7 @@
 /* HOMEPAGE.CSS */
 
+@import url("Team-Arbitrary.github.io/General.css");
+
 html {
     font-family: 'Consolas';
     background-color: rgba(180, 210, 255, 0.4);
