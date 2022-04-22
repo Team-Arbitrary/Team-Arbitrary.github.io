@@ -11,6 +11,7 @@ require_once "../Utils.php";  // Load some common functions to reuse code
 session_start();
 if ( isset($_POST['userName'], $_POST['password']) )  // From sign-in action of user
 {
+    session_unset();
     $postedUserName = $_POST['userName'];
     $postedPassword = $_POST['password'];
 }
