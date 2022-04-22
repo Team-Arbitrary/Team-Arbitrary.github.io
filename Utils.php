@@ -18,3 +18,8 @@ function GoToURL($url)
 {
     exit("<script> window.location.href='$url'; </script>");
 }
+
+function GoToURLAtJavaScript($url)
+{
+    exit("window.location.href='$url';");
+}

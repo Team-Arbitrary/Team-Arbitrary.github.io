@@ -1,30 +1,13 @@
-// Configuration
-const SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
-const SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
-
-
-const eventTableArea = document.querySelector("div");
-const eventTable = document.querySelector("table");
-let eventTables = [];
-function UpdateEventTablesInHTML(events)
+function UpdateEventTablesInHTML(user)
 {
-    eventTables = [];
-    for (const event of events) {
-        // Fill out each Event Form
-        eventTable.querySelector(".ID").value = event.id;
-        eventTable.querySelector(".Name").innerHTML = event.name;
-        eventTable.querySelector(".Type").innerHTML = event.type;
-        eventTable.querySelector(".StartTime").innerHTML = event.startTime;
-        eventTable.querySelector(".EndTime").innerHTML = event.endTime;
-        eventTable.querySelector(".Organization").innerHTML = event.organization;
-        eventTable.querySelector(".Presenter").innerHTML = event.presenter;
-        eventTable.querySelector(".Description").innerHTML = event.description;
+    document.querySelector("#userName").value = user.name;
 
-        // Constantly add new Event tables to the eventTables array
-        eventTables.push(eventTable.outerHTML);
-    }
-
-    eventTableArea.innerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
+    document.querySelector(".Type").innerHTML = event.type;
+    document.querySelector(".StartTime").innerHTML = event.startTime;
+    document.querySelector(".EndTime").innerHTML = event.endTime;
+    document.querySelector(".Organization").innerHTML = event.organization;
+    document.querySelector(".Presenter").innerHTML = event.presenter;
+    document.querySelector(".Description").innerHTML = event.description;
 }
 
 
@@ -47,12 +30,9 @@ function HandleErrors(errorMessage)
 const xmlHttp = new XMLHttpRequest();
 
 
-const updateButton = document.querySelector("#updateButton");
 function UpdateEventTables()
 {
     xmlHttp.open("GET","Update.php?",false);
-
-    updateButton.disabled=true;
     xmlHttp.send();
 
     try
@@ -71,7 +51,6 @@ function UpdateEventTables()
     {
         HandleErrors(xmlHttp.responseText);
     }
-    updateButton.disabled=false;
 }
 
 

@@ -6,27 +6,29 @@
 </head>
 
 <body>
+<form>
 <label>Username:
-	<input type="text" name="userName"></label>
+	<input type="text" id="userName" name="userName" required></label>
 
-<label>Password:
-	<input type="text" name="password"></label>
+<label>New Password:
+	<input type="text" id="newPassword" name="newPassword"></label>
 
-<p>
-	<label for="textfield3">Status:</label>
+<p>Status:
 	<label>
-		<input type="radio" name="status" value="Full-Time">
+		<input type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
 		Full Time</label>
 	<label>
-		<input type="radio" name="status" value="Adjunct">
+		<input type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
 		Adjunct</label>
 	<label>
-		<input type="radio" name="status" value="Uncertain">
+		<input type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
 		Uncertain</label>
 </p>
 	
 <label>Email:
-	<input type="text" name="email"></label>
+	<input type="text" id="email" name="email" required></label>
 
+<input type="submit" value="Change User Information">
+</form>
 </body>
 </html>

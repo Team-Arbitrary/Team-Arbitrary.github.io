@@ -1,5 +1,5 @@
 <?php
-require_once "Events.php";
+require_once "../SessionChecker.php";
 
 
 require_once "../Database/Connection.php";  // Connect Database
@@ -52,5 +52,5 @@ if ($statement->num_rows > 0)
 }
 else
 {
-    exit("No Result");
+    exit("No Event");
 }

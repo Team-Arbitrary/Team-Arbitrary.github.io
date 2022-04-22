@@ -1,5 +1,5 @@
 <?php
-require_once "Events.php";
+require_once "../SessionChecker.php";
 
 
 require_once "../Database/Connection.php";  // Connect Database

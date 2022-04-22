@@ -44,5 +44,5 @@ if ( !$statement->execute() )
     Alert("! Failed to insert new event into database, Please contact administrator");
     GoToURL($EVENT_FORM_PAGE_URL);
 }
-Alert("添加事件成功");
+Alert("Add event successfully");
 GoToURL($EVENT_FORM_PAGE_URL);
