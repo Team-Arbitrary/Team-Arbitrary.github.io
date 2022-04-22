@@ -1,21 +1,19 @@
 /* HOMEPAGE.CSS */
 
-@import url("Team-Arbitrary.github.io/General.css");
-
 html {
-    font-family: 'Consolas';
+    font-family: 'Lato';
     background-color: rgba(180, 210, 255, 0.4);
 }
 
 button {
     font-size: 1.5rem;
     border-radius: .2rem;
-    margin-right: 5rem;
-    margin-top: 5rem;
+    margin: 20px 30px;
     text-decoration: none;
     background-color: rgb(39, 179, 255);
     border-color: rgb(12, 129, 192);
     color: rgb(0, 11, 19);
+    padding: 5px;
 }
 
 .contain {
@@ -23,6 +21,7 @@ button {
 }
 
 h1 {
+    font-size: 2em;
     color:rgb(26, 65, 104)
 }
 
