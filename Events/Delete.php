@@ -1,8 +1,4 @@
 <?php
-// Configuration
-$EVENTS_PAGE_URL = "../Events/Events.html";
-
-
 require_once "Events.php";
 
 
@@ -29,9 +25,6 @@ $statement->bind_param('s', $_POST['id']);
 // Execute
 if ( !$statement->execute() )
 {
-    exit("! Failed to query the database, Please contact administrator");
+    exit("! Failed to delete event from the database, Please contact administrator");
 }
-$statement->store_result();
-
-Alert("已成功删除");
-GoToURL($EVENTS_PAGE_URL);
+exit("Deleted successfully");

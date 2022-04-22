@@ -2,12 +2,56 @@
 const SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 const SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 
-const xmlHttp = new XMLHttpRequest();
 
-// 在显示页面时 和 点击更新按钮时 自动运行更新函数
+const eventTableArea = document.querySelector("div");
+const eventTable = document.querySelector("table");
+let eventTables = [];
+function UpdateEventTablesInHTML(events)
+{
+    debugger;
+    eventTables = [];
+    for (const event of events) {
+        // Fill out each Event Form
+        eventTable.querySelector(".ID").value = event.id;
+        eventTable.querySelector(".Name").innerHTML = event.name;
+        eventTable.querySelector(".Type").innerHTML = event.type;
+        eventTable.querySelector(".StartTime").innerHTML = event.startTime;
+        eventTable.querySelector(".EndTime").innerHTML = event.endTime;
+        eventTable.querySelector(".Organization").innerHTML = event.organization;
+        eventTable.querySelector(".Presenter").innerHTML = event.presenter;
+        eventTable.querySelector(".Description").innerHTML = event.description;
+
+        // Constantly add new Event tables to the eventTables array
+        eventTables.push(eventTable.outerHTML);
+    }
+
+    eventTableArea.innerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
+}
+
+
+function HandleErrors(errorMessage)
+{
+    eventTableArea.innerHTML = '';  //Empty the events in the event tables area
+    window.alert(errorMessage);
+
+    if (errorMessage === "Automatically sign in ...")
+    {
+        window.location.href=SIGN_IN_PHP_URL;
+    }
+    else if(errorMessage === "The session has expired or the account is not signed in")
+    {
+        window.location.href=SIGN_IN_PAGE_URL;
+    }
+}
+
+
+const xmlHttp = new XMLHttpRequest();
+const updateButton = document.querySelector("#updateButton");
 function UpdateEventTables()
 {
     xmlHttp.open("GET","Update.php?",false);
+
+    updateButton.disabled=true;
     xmlHttp.send();
 
     try
@@ -26,63 +70,25 @@ function UpdateEventTables()
     {
         HandleErrors(xmlHttp.responseText);
     }
+    updateButton.disabled=false;
 }
 
 
-function HandleErrors(errorMessage)
+function DeleteEventTable(formElement)
 {
-    eventTableArea.innerHTML = '';  //清空事件区中的事件
-    window.alert(errorMessage);
-
-    if (errorMessage === "账号刚注册但未登录，即将自动登录")
+    if (window.confirm("Are you sure you want to delete this event?"))
     {
-        window.location.href=SIGN_IN_PHP_URL;
-    }
-    else if(errorMessage === "登录会话已过期 或 未登录账号")
-    {
-        window.location.href=SIGN_IN_PAGE_URL;
-    }
+        xmlHttp.open("POST","Delete.php",false);
+        const deleteButton = formElement.querySelector(".DeleteButton");
 
+        deleteButton.disabled=true;
+        xmlHttp.send(new FormData(formElement));
 
-    // else if(errorMessage === "! Could not find Database connection, Please contact administrator")
-    // {
-    //     window.location.reload();
-    // }
-    //
-    // else if(errorMessage === "! Failed to prepare SQL statement, Please contact administrator")
-    // {
-    //     window.location.reload();
-    // }
-    //
-    // else if(errorMessage === "! Failed to query the database, Please contact administrator")
-    // {
-    //     window.location.reload();
-    // }
+        window.alert(xmlHttp.responseText);
+        deleteButton.disabled=false;
+    }
 }
 
-const eventTableArea = document.querySelector("div");
-const eventTable = document.querySelector("table");
-let eventTables = [];
-function UpdateEventTablesInHTML(events)
-{
-    eventTables = [];
-    for (const event of events) {
-        // 填写每一个Event表格
-        eventTable.querySelector(".ID").value = event.id;
-        eventTable.querySelector(".Name").innerHTML = event.name;
-        eventTable.querySelector(".Type").innerHTML = event.type;
-        eventTable.querySelector(".StartTime").innerHTML = event.startTime;
-        eventTable.querySelector(".EndTime").innerHTML = event.endTime;
-        eventTable.querySelector(".Organization").innerHTML = event.organization;
-        eventTable.querySelector(".Presenter").innerHTML = event.presenter;
-        eventTable.querySelector(".Description").innerHTML = event.description;
-
-        // 不断将新的Event表格加入eventTables数组中
-        eventTables.push(eventTable.outerHTML);
-    }
-
-    eventTableArea.innerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
-}
 
 
 // eventTable = document.createElement("table");

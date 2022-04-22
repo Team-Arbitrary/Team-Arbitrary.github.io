@@ -7,9 +7,10 @@
 </head>
 
 <body onpageshow="UpdateEventTables()">
-<input type="button" value="Update Events" onClick="UpdateEventTables()">
+<input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
+<input type="button" value="Add New Event">
 
-<a href="Sign-Out.php">
+<a href="../Sign-Out.php">
 	<input type="button" value="Sign out">
 </a>
 
@@ -45,9 +46,9 @@
 				<td class="Description"></td>
 			</tr>
 			<tr>
-				<td><form action="Delete.php" method="post">
+				<td><form onsubmit="DeleteEventTable(this)">
 					<input type="hidden" class="ID" name="id">
-					<input type="submit" value="Delete Event">
+					<input type="submit" class="DeleteButton" value="Delete Event">
 				</form></td>
 			</tr>
 		</tbody>
