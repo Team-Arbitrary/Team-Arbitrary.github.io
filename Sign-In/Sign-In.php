@@ -81,13 +81,6 @@ if ($statement->num_rows == 1)
 
         session_write_close();
 
-//        if ( session_status() === PHP_SESSION_NONE )
-//        {
-//            Alert("session NONE, ".
-//                "userName: {$_SESSION['userName']} ".
-//                "userID: {$_SESSION['userID']}");
-//        }
-
         GoToURL($MAIN_PAGE_URL);
     }
     else

@@ -3,7 +3,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="EventFrom/EventForm.css">
+    <link rel="stylesheet" type="text/css" href="EventForm/EventForm.css">
 </head>
 <?php //__pdCompletionForm.php
     include '__header.php';

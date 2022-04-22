@@ -9,7 +9,7 @@
 <body onpageshow="UpdateEventTables()">
 <input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
 
-<a href="../EventFrom/EventForm.html">
+<a href="../EventForm/EventForm.html">
 	<input type="button" value="Add New Event">
 </a>
 
@@ -49,7 +49,7 @@
 				<td class="Description"></td>
 			</tr>
 			<tr>
-				<td><form onsubmit="DeleteEventTable(this)">
+				<td><form method="post" onsubmit="return DeleteEventTable(this)">
 					<input type="hidden" class="ID" name="id">
 					<input type="submit" class="DeleteButton" value="Delete Event">
 				</form></td>

@@ -87,7 +87,9 @@ function DeleteEventTable(formElement)
 
         window.alert(xmlHttp.responseText);
         deleteButton.disabled=false;
+        return true;  // 浏览器自动刷新页面
     }
+    return false;  // 拒绝浏览器自动刷新页面
 }
 
 

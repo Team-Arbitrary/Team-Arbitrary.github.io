@@ -1,5 +1,5 @@
 <?php
-$HOME_PAGE_URL = "../Home/Home.html";
+$HOME_PAGE_URL = "Home/Home.html";
 
 
 require_once "Utils.php";
