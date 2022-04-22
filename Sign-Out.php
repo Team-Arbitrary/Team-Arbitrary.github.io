@@ -17,10 +17,11 @@ session_start();
 
 session_unset();
 session_destroy();
+Alert("Your account has been successfully Signed out");
 
-if ( session_status() === PHP_SESSION_NONE )
-{
-    Alert("No Active Session! 已登出");
-}
+//if ( session_status() === PHP_SESSION_NONE )
+//{
+//    Alert("No Active Session!");
+//}
 
-GoToURL("../Sign-In/Sign-In.html");
+GoToURL("Sign-In/Sign-In.html");

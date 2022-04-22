@@ -8,7 +8,6 @@ const eventTable = document.querySelector("table");
 let eventTables = [];
 function UpdateEventTablesInHTML(events)
 {
-    debugger;
     eventTables = [];
     for (const event of events) {
         // Fill out each Event Form
