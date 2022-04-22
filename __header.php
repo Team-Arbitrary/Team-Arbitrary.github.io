@@ -1,10 +1,10 @@
-<?php //header.php 
+<?php //__header.php
 // TODO: Add session initialization for logins
 ?>
 <!doctype HTML>
 <html>
     <head>
-        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="Header/Header.css">
     </head>
     <body>
         <header>
@@ -16,8 +16,8 @@
             <nav>
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="pdCompletionForm.php">FORM</a></li>
-                    <li><a href="myPD.php">MY PD</a></li>
+                    <li><a href="__pdCompletionForm.php">FORM</a></li>
+                    <li><a href="__myPD.php">MY PD</a></li>
                     <li><a href="#">ABOUT</a></li>
                     <li><a href="#">LOGOUT</a></li>
                 </ul>

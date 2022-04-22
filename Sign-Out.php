@@ -1,5 +1,10 @@
 <?php
+$HOME_PAGE_URL = "../Home/Home.html";
+
+
 require_once "Utils.php";
+
+
 session_start();
 
 //if( session_status() !== PHP_SESSION_ACTIVE )
@@ -24,4 +29,4 @@ Alert("Your account has been successfully Signed out");
 //    Alert("No Active Session!");
 //}
 
-GoToURL("Sign-In/Sign-In.html");
+GoToURL($HOME_PAGE_URL);

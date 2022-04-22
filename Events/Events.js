@@ -45,6 +45,8 @@ function HandleErrors(errorMessage)
 
 
 const xmlHttp = new XMLHttpRequest();
+
+
 const updateButton = document.querySelector("#updateButton");
 function UpdateEventTables()
 {
