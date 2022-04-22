@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2022 at 10:14 PM
+-- Generation Time: Apr 22, 2022 at 03:45 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -33,8 +33,8 @@ CREATE TABLE `event` (
   `user_id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `type` enum('In-Person','Virtual') COLLATE utf8mb4_bin NOT NULL,
-  `start_time` timestamp NOT NULL,
-  `end_time` timestamp NOT NULL,
+  `start_time` date NOT NULL,
+  `end_time` date NOT NULL,
   `organization` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `presenter` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `description` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL
@@ -45,8 +45,15 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id`, `user_id`, `name`, `type`, `start_time`, `end_time`, `organization`, `presenter`, `description`) VALUES
-(1, 6, 'Preparation for class A', 'In-Person', '2022-04-06 13:56:49', '2022-04-09 13:59:38', 'Jackson College', 'Michael', 'This is a necessary course.'),
-(2, 6, 'Preparation for class B', 'Virtual', '2022-04-06 13:56:49', '2022-04-09 13:59:38', '', 'Michael', 'This is a necessary course.');
+(1, 6, 'Preparation for class A', 'In-Person', '2022-04-06', '2022-04-09', 'Jackson College', 'Michael', 'This is a necessary course.'),
+(2, 6, 'Preparation for class B', 'Virtual', '2022-04-06', '2022-04-09', '', 'Michael', 'This is a necessary course.'),
+(13, 6, 'Preparation for class C', 'In-Person', '2022-04-06', '2022-04-09', 'Jackson College', 'Michael', 'This is a necessary course.'),
+(14, 6, 'Preparation for class D', 'Virtual', '2022-04-06', '2022-04-09', '', 'Michael', 'This is a necessary course.'),
+(15, 6, 'Yuzhen Zhang', 'Virtual', '2022-04-19', '2022-04-26', '123', '999', 'abc'),
+(26, 6, 'Yuzhen Zhang', 'In-Person', '2022-04-09', '2022-04-16', '', '', ''),
+(27, 16, 'Yuzhen', 'Virtual', '2022-04-09', '2022-04-06', '', '', ''),
+(28, 16, '6qw5', 'Virtual', '2022-04-09', '2022-04-06', '', '', ''),
+(29, 16, '6qw5', 'Virtual', '2022-04-09', '2022-04-06', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -58,6 +65,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `status` enum('Full-Time','Adjunct','Uncertain') COLLATE utf8mb4_bin DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -65,12 +73,11 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `password_hash`, `email`) VALUES
-(5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', ''),
-(6, '999abc', '$2y$10$WSg.KeEpZVDZJucntE7gO.9HPWwPumGUuPSRvMBG5xGWqy.tl6wVm', ''),
-(10, 'Asd', '$2y$10$pn01QQgi8VGvupOE0fkFo.l378oqeQNJ7qoJzhnoH3Vpp8AVUlIES', '123@gmail'),
-(12, 'Tyr123', '$2y$10$SY0dvd.tT88K5XSjP4sIl.EMj62EPdx5Ky3q5Yh2hQKqprvBG0jna', ''),
-(13, 'tyr123', '$2y$10$nwiaQQ/mPygKaLZCSMuXLO1vOg8WeiNxmKdWdiZtigwkRl.K80QiW', '');
+INSERT INTO `user` (`id`, `name`, `password_hash`, `status`, `email`) VALUES
+(5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', NULL, ''),
+(6, '999abc', '$2y$10$WSg.KeEpZVDZJucntE7gO.9HPWwPumGUuPSRvMBG5xGWqy.tl6wVm', NULL, ''),
+(15, 'abc', '$2y$10$XZCMlwYOleEDoLLgxce51e9wOxY9vN/HH4ziWPYqQgp4Yh.HxlBt.', NULL, ''),
+(16, 'Tyr123', '$2y$10$6ckvf702ZB1c9XJRljJhAeIQFtM9Yv3i.vQFhIEnPP2giksWON2Zi', NULL, 'zxcv1050135042@126.com');
 
 --
 -- Indexes for dumped tables
@@ -100,13 +107,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
