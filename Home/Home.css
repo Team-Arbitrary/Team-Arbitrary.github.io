@@ -5,6 +5,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -50,13 +51,14 @@ a:visited {
 }
 
 .contain {
-    width: 50vw;
+    width: 75vw;
     text-align: center;
+    margin: auto;
 }
 
 h1 {
     font-size: 3em;
-    color:rgb(26, 65, 104)
+    color:rgb(26, 65, 104);
 }
 
 p {
@@ -65,7 +67,9 @@ p {
 }
 
 .header {
-    padding: 30px 50px 100px 50px
+    padding: 30px 50px;
+    width: 100vw;
+    background-color: rgba(180, 210, 255, 0.7);
 }
 
 .info {
@@ -75,11 +79,23 @@ p {
 }
 
 .info-buttons {
+    width: 100vw;
+    margin: auto;
+    height: auto;
+    padding: 100px;
+    background-image: url("space.jpg");
+    background-attachment: fixed;
+    background-size: contain;
+}
+
+.ib-wrapper {
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 60vw;
     border-radius: 40px;
-    background-color: rgba(180, 210, 255, 0.6);;
+    background-color: rgba(180, 210, 255, 1);;
 }
 
 .buttons {
