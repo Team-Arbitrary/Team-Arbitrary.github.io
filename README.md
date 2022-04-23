@@ -35,8 +35,6 @@ Platform Tools:
 
 ![Testing Process Diagram.drawio](DESIGN/Testing Process Diagram.drawio.png)
 
-[Image File Link](https://github.com/Team-Arbitrary/Team-Arbitrary.github.io/blob/d57831a0b05a916abd3acb211c6434052c5eb0ef/DESIGN/Temporary_Non-Normative_PROCESS_DESIGN_DIAGRAM.drawio.png) and [Design Diagram File Link](https://github.com/Team-Arbitrary/Team-Arbitrary.github.io/blob/d57831a0b05a916abd3acb211c6434052c5eb0ef/DESIGN/Temporary_Non-Normative_PROCESS_DESIGN_DIAGRAM.drawio)
-
 
 
 
