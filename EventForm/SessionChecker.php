@@ -8,6 +8,7 @@ require_once "../Utils.php";
 
 
 // Check if user is signed in
+header('Content-Type: text/javascript');
 session_start();
 if (!isset($_SESSION['userID']))  //User not signed in
 {
