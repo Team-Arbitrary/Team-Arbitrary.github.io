@@ -12,7 +12,7 @@ if ( !isset($connection) )  // Check if the Database connection exists
 // Change Related Information of The User
 // Prepare SQL statement, preparing the SQL statement will prevent SQL injection.
 // and Statements can be reused without repeated loading.
-if ( $_POST['newPassword'] == '' )  //不修改用户密码
+if ( $_POST['newPassword'] == '' )  //Do not change user password
 {
     if ( !$statement = $connection->prepare(
         "UPDATE user SET user.name = ?, user.status = ?, user.email = ? 
@@ -25,7 +25,7 @@ if ( $_POST['newPassword'] == '' )  //不修改用户密码
     $statement->bind_param('ssss', $_POST['userName'],
                                           $_POST['status'], $_POST['email'], $_SESSION['userID']);
 }
-else  //修改用户密码
+else  //Change user password
 {
     if ( !$statement = $connection->prepare(
         "UPDATE user SET user.name = ?, user.password_hash = ?, user.status = ?, user.email = ? 
@@ -50,4 +50,4 @@ if ( !$statement->execute() )
 {
     exit("! Failed to update user information to the database, Please contact administrator");
 }
-exit("修改用户信息成功");
+exit("Modify user information successfully");

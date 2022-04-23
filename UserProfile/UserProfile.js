@@ -46,18 +46,18 @@ function UpdateUserInformation()
         {
             UpdateUserInformationInHTML(user[0]);
         }
-        else  // responseText 中的内容，是服务器传输的错误信息，不是 JSON 形式的数据
+        else  // The content in responseText is the error message transmitted by the server, not the data in JSON format
         {
             HandleErrors(xmlHttp.responseText);
         }
     }
-    catch(exception)  // responseText 中的内容，是服务器传输的错误信息，不是 JSON 形式的数据，并且不符合 JSON.parse() 的输入内容的格式要求
+    catch(exception)  // The content in responseText is the error message transmitted by the server, not the data in JSON format, and does not meet the format requirements of the input content of JSON.parse()
     {
         HandleErrors(xmlHttp.responseText);
     }
 }
 
-// Todo 修改
+
 function ChangeUserInformation(formElement)
 {
     if (window.confirm("Are you sure you want to Change Your Information?"))
@@ -70,7 +70,7 @@ function ChangeUserInformation(formElement)
 
         window.alert(xmlHttp.responseText);
         changeButton.disabled=false;
-        return true;  // 浏览器自动刷新页面
+        return true;  // The browser automatically refreshes the page
     }
-    return false;  // 拒绝浏览器自动刷新页面
+    return false;  // Deny the browser to automatically refresh the page
 }
