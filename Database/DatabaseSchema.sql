@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 22, 2022 at 03:45 AM
+-- Generation Time: Apr 23, 2022 at 02:13 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.11
 
@@ -65,7 +65,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `status` enum('Full-Time','Adjunct','Uncertain') COLLATE utf8mb4_bin DEFAULT NULL,
+  `status` enum('Full-Time','Adjunct','Uncertain') COLLATE utf8mb4_bin NOT NULL DEFAULT 'Uncertain',
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
@@ -74,10 +74,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `password_hash`, `status`, `email`) VALUES
-(5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', NULL, ''),
-(6, '999abc', '$2y$10$WSg.KeEpZVDZJucntE7gO.9HPWwPumGUuPSRvMBG5xGWqy.tl6wVm', NULL, ''),
-(15, 'abc', '$2y$10$XZCMlwYOleEDoLLgxce51e9wOxY9vN/HH4ziWPYqQgp4Yh.HxlBt.', NULL, ''),
-(16, 'Tyr123', '$2y$10$6ckvf702ZB1c9XJRljJhAeIQFtM9Yv3i.vQFhIEnPP2giksWON2Zi', NULL, 'zxcv1050135042@126.com');
+(5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', 'Uncertain', ''),
+(6, '999abc', '$2y$10$Db8nfIfs0NF/o8TVy8zhlOo2/1uaSmdF/.LdLN7QEb.xo/kLnq9kW', 'Uncertain', 'zxcv1050135042@126.com'),
+(15, 'abc', '$2y$10$XZCMlwYOleEDoLLgxce51e9wOxY9vN/HH4ziWPYqQgp4Yh.HxlBt.', 'Uncertain', ''),
+(16, 'Tyr123', '$2y$10$6ckvf702ZB1c9XJRljJhAeIQFtM9Yv3i.vQFhIEnPP2giksWON2Zi', 'Uncertain', 'zxcv1050135042@126.com');
 
 --
 -- Indexes for dumped tables

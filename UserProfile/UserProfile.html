@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="../General.css" rel="stylesheet" type="text/css">
+<title>User Profile</title>
+</head>
+
+<body onpageshow="UpdateUserInformation()">
+<form method="post" onsubmit="return ChangeUserInformation(this)">
+<label>Username:
+	<input type="text" id="userName" name="userName" required></label>
+
+<label>New Password:
+	<input type="text" id="newPassword" name="newPassword"></label>
+
+<p>Status:
+	<label>
+		<input type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
+		Full Time</label>
+	<label>
+		<input type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
+		Adjunct</label>
+	<label>
+		<input type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
+		Uncertain</label>
+</p>
+	
+<label>Email:
+	<input type="text" id="email" name="email"></label>
+
+<br><input type="submit" id="ChangeButton" value="Change User Information">
+	
+</form>
+</body>
+
+<script src="UserProfile.js"></script>
+</html>
