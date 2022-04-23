@@ -33,7 +33,7 @@ Platform Tools:
 
 ## Testing Process Diagram
 
-![Testing Process Diagram.drawio](DESIGN/Testing Process Diagram.drawio.png)
+![Testing Process Diagram.drawio](DESIGN/Testing_Process_Diagram.drawio.png)
 
 
 
