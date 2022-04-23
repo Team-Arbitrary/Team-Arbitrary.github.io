@@ -29,8 +29,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: files.000webhost.com
-          username: ${{ secrets.username_test }}
-          password: ${{ secrets.password_test }}
+          username: ${{ secrets.PLATFORM_USERNAME }}
+          password: ${{ secrets.PLATFORM_PASSEORD }}
           server-dir: public_html/
           # dangerous-clean-slate: true
           exclude: |
