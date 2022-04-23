@@ -1,31 +1,88 @@
 /* HOMEPAGE.CSS */
 
+@import url("General.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-family: 'Lato';
     background-color: rgba(180, 210, 255, 0.4);
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 button {
     font-size: 1.5rem;
-    border-radius: .2rem;
+    border-radius: 10px;
     margin: 20px 30px;
     text-decoration: none;
-    background-color: rgb(39, 179, 255);
-    border-color: rgb(12, 129, 192);
+    background-color: rgba(39, 179, 255, 0.7);
+    border: none;
     color: rgb(0, 11, 19);
-    padding: 5px;
+    padding: 7px 0;
+    transition: all 0.3s ease 0s;
+    box-shadow: 2.5px 2.5px rgba(17, 157,232, 0.8);
+}
+
+button:hover {
+    background-color: rgba(34, 174, 250, 0.8);
+    box-shadow: 2.5px 2.5px rgba(10, 150,222, 0.8);
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    padding: 7px 15px 11px 15px;
+    cursor: default;
+    border-radius: 10px;
+}
+
+a:visited {
+    color: rgb(0, 11, 19);
 }
 
 .contain {
+    width: 50vw;
     text-align: center;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3em;
     color:rgb(26, 65, 104)
 }
 
 p {
-    font-size: 1.5rem;
-    margin-top: 12rem;
+    font-size: 2rem;
+    
 }
+
+.header {
+    padding: 30px 50px 100px 50px
+}
+
+.info {
+    margin: 20px;
+    width: 55vw;
+    text-align: center;
+}
+
+.info-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 40px;
+    background-color: rgba(180, 210, 255, 0.6);;
+}
+
+.buttons {
+    margin: 20px;
+}
+
