@@ -77,7 +77,8 @@ INSERT INTO `user` (`id`, `name`, `password_hash`, `status`, `email`) VALUES
 (5, 'Tyr999', '$2y$10$Dn4ovsR0lQNl6G25Wjj6XeJa5plNlrBrLMxgN86ZAHIoqUlCrYaUS', NULL, ''),
 (6, '999abc', '$2y$10$WSg.KeEpZVDZJucntE7gO.9HPWwPumGUuPSRvMBG5xGWqy.tl6wVm', NULL, ''),
 (15, 'abc', '$2y$10$XZCMlwYOleEDoLLgxce51e9wOxY9vN/HH4ziWPYqQgp4Yh.HxlBt.', NULL, ''),
-(16, 'Tyr123', '$2y$10$6ckvf702ZB1c9XJRljJhAeIQFtM9Yv3i.vQFhIEnPP2giksWON2Zi', NULL, 'zxcv1050135042@126.com');
+(16, 'Tyr123', '$2y$10$6ckvf702ZB1c9XJRljJhAeIQFtM9Yv3i.vQFhIEnPP2giksWON2Zi', NULL, 'zxcv1050135042@126.com'),
+(17, 'josh', '$2y$10$PBL59SURFaxsLu6rYKfmxul8un3mSnVmMVDSvB8Xns7koxrTMlb/6', NULL, 'riddlejoshua98@gmail.com');
 
 --
 -- Indexes for dumped tables

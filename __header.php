@@ -18,7 +18,7 @@
                     <li><a href="#">HOME</a></li>
                     <li><a href="__pdCompletionForm.php">FORM</a></li>
                     <li><a href="__myPD.php">MY PD</a></li>
-                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">PROFILE</a></li>
                     <li><a href="#">LOGOUT</a></li>
                 </ul>
             </nav> 
