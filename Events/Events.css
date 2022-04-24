@@ -1,11 +1,101 @@
 @charset "utf-8";
 
-table {
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	display: table;
+	margin: auto;
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	overscroll-behavior-y: none;
+}
+
+th, td {
+	text-align: center;
+	border: 1px solid whitesmoke;
+	border-right: none;
+	border-left: none;
 	width: auto;
-	border-bottom-width: thin;
-	border-style: none none solid;
+	padding: 10px;
+	color: whitesmoke;
 }
 
 th {
-	text-align: end;
+	border: none;
+}
+
+td {
+	border-bottom: none;
+}
+
+h2 {
+	color: whitesmoke;
+	text-align: center;
+	font-size: 1.65em;
+}
+
+.header {
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+	background-color: blue;
+	text-align: right;
+	padding: 20px 0;
+	width: 100vw;
+	background-color: rgb(15, 55, 94);
+}
+
+.title-wrapper {
+	width: 40vw;
+	max-width: 400px;
+}
+
+.options-wrapper {
+	margin: auto 0;
+}
+
+.events {
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../glacier.webp");
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+	padding: 10px;
+	height: 100vh;
+}
+
+#events-wrapper {
+	margin: 10px auto;
+	width: 90vw;
+	border-radius: 30px;
+	padding: 10px;
+	overflow: hidden;
+	overflow-x: auto;
+}
+
+.events-table {
+	border-radius: 20px;
+	width: 85vw;
+	max-width: 1000px;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: rgb(15, 55, 94);
+}
+
+.delete-button-cell {
+	border: none;
+}
+
+.DeleteButton {
+	padding: 7px 10px;
+	border: none;
+	border-radius: 10px;
 }
