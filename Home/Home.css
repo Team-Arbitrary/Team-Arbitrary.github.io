@@ -19,6 +19,7 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
+    overscroll-behavior-y: none;
 }
 
 h1 {
@@ -163,6 +164,11 @@ h2 {
     padding: 2px 5px;
     font-family: 'Lato', sans-serif;
     font-size: 1.3em;
+    background-color: whitesmoke;
+}
+
+.contact:focus {
+    outline: none;
 }
 
 input[type='submit'] {
@@ -173,10 +179,13 @@ input[type='submit'] {
     border-radius: 12px;
     font-weight: bold;
     border: none;
+    transition: all 0.3s ease 0s;
+    box-shadow: -4px 4px rgba(30, 30, 90, 1.0);
 }
 
-.contact:focus {
-    outline: none;
+input[type='submit']:hover {
+    background-color: rgb(225,225,225);
+    transform: scale(1.05);
 }
 
 
