@@ -1,63 +1,63 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Professional Development Events</title>
-<link href="Events.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<title>Professional Development Events</title>
+	<link href="Events.css" rel="stylesheet" type="text/css">
 </head>
 
 <body onpageshow="UpdateEventTables()">
-<input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
+	<header class="header">
+		<div class="title-wrapper">
+			<h2>PROFESSIONAL DEVELOPMENT NOTEBOOK</h2>
+		</div>
+		<div class="options-wrapper">
+			<input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
 
-<!--在新窗口打开 EventForm.html-->
-<a href="../EventForm/EventForm.html" target="_blank">
-	<input type="button" value="Add New Event">
-</a>
+			<!--在新窗口打开 EventForm.html-->
+			<a href="../EventForm/EventForm.html" target="_blank">
+				<input type="button" value="Add New Event">
+			</a>
 
-<a href="../Sign-Out.php">
-	<input type="button" value="Sign out">
-</a>
-
-<div>
-	<table>
-		<tbody>
-			<tr>
-				<th scope="row">Event:</th>
-				<td class="Name"></td>
-			</tr>
-			<tr>
-				<th scope="row">Type:</th>
-				<td class="Type"></td>
-			</tr>
-			<tr>
-				<th scope="row">Begin:</th>
-				<td class="StartTime"></td>
-			</tr>
-			<tr>
-				<th scope="row">End:</th>
-				<td class="EndTime"></td>
-			</tr>
-			<tr>
-				<th scope="row">Organization:</th>
-				<td class="Organization"></td>
-			</tr>
-			<tr>
-				<th scope="row">Presenter:</th>
-				<td class="Presenter"></td>
-			</tr>
-			<tr>
-				<th scope="row">Description:</th>
-				<td class="Description"></td>
-			</tr>
-			<tr>
-				<td><form method="post" onsubmit="return DeleteEventTable(this)">
-					<input type="hidden" class="ID" name="id">
-					<input type="submit" class="DeleteButton" value="Delete Event">
-				</form></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
+			<a href="../Sign-Out.php">
+				<input type="button" value="Sign Out">
+			</a>
+		</div>
+	</header>
+	
+	<section class="events">
+		<div class="events-display">
+			<div id="events-wrapper">
+				<table class="events-table">
+					<tr>
+						<th scope="row">Event</th>
+						<th scope="row">Type</th>
+						<th scope="row">Begin</th>
+						<th scope="row">End</th>
+						<th scope="row">Organization</th>
+						<th scope="row">Presenter</th>
+						<th scope="row">Description</th>
+					</tr>
+					<tr>
+						<td class="Type"></td>
+						<td class="StartTime"></td>
+						<td class="EndTime"></td>
+						<td class="Organization"></td>
+						<td class="Presenter"></td>
+						<td class="Description"></td>
+						<td class="Name"></td>
+					</tr>
+					<tr>
+						<td><form method="post" onsubmit="return DeleteEventTable(this)">
+							<input type="hidden" class="ID" name="id">
+							<input type="submit" class="DeleteButton" value="Delete Event">
+						</form></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+	
 </body>
 
 <script src="Events.js"></script>

@@ -3,7 +3,7 @@ const SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 const SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 
 
-const eventTableArea = document.querySelector("div");
+const eventTableArea = document.querySelector('div[id="events-wrapper"]');
 const eventTable = document.querySelector("table");
 let eventTables = [];
 function UpdateEventTablesInHTML(events)

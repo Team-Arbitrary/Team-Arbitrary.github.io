@@ -1,11 +1,58 @@
 @charset "utf-8";
 
-table {
-	width: auto;
-	border-bottom-width: thin;
-	border-style: none none solid;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-th {
-	text-align: end;
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: table-cell;
+	vertical-align: middle;
+	overscroll-behavior-y: none;
+}
+
+th, td {
+	text-align: center;
+	border: 1px solid black;
+	width: auto;
+}
+
+.header {
+	display: flex;
+	text-align: center;
+	justify-content: space-around;
+	background-color: blue;
+	text-align: right;
+	padding: 20px 0;
+	width: 100vw;
+}
+
+.options-wrapper {
+	margin: auto 0;
+}
+
+.events {
+	background-color: lightblue;
+	padding: 10px;
+	height: 100vh;
+}
+
+#events-wrapper {
+	margin: 10px;
+	width: auto;
+	border: 2px solid green;
+	padding: 10px;
+}
+
+.events-table {
+	width: 30vw;
+	margin: 10px auto;
+	border: 1px black solid;
+	padding: 10px;
 }
