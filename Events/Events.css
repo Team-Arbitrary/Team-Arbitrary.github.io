@@ -9,6 +9,7 @@
 html {
 	display: table;
 	margin: auto;
+	font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -19,8 +20,26 @@ body {
 
 th, td {
 	text-align: center;
-	border: 1px solid black;
+	border: 1px solid whitesmoke;
+	border-right: none;
+	border-left: none;
 	width: auto;
+	padding: 10px;
+	color: whitesmoke;
+}
+
+th {
+	border: none;
+}
+
+td {
+	border-bottom: none;
+}
+
+h2 {
+	color: whitesmoke;
+	text-align: center;
+	font-size: 1.65em;
 }
 
 .header {
@@ -31,6 +50,12 @@ th, td {
 	text-align: right;
 	padding: 20px 0;
 	width: 100vw;
+	background-color: rgb(15, 55, 94);
+}
+
+.title-wrapper {
+	width: 40vw;
+	max-width: 400px;
 }
 
 .options-wrapper {
@@ -38,21 +63,39 @@ th, td {
 }
 
 .events {
-	background-color: lightblue;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../glacier.webp");
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 	padding: 10px;
 	height: 100vh;
 }
 
 #events-wrapper {
-	margin: 10px;
-	width: auto;
-	border: 2px solid green;
+	margin: 10px auto;
+	width: 90vw;
+	border-radius: 30px;
 	padding: 10px;
+	overflow: hidden;
+	overflow-x: auto;
 }
 
 .events-table {
-	width: 30vw;
+	border-radius: 20px;
+	width: 85vw;
+	max-width: 1000px;
 	margin: 10px auto;
-	border: 1px black solid;
 	padding: 10px;
+	background-color: rgb(15, 55, 94);
+}
+
+.delete-button-cell {
+	border: none;
+}
+
+.DeleteButton {
+	padding: 7px 10px;
+	border: none;
+	border-radius: 10px;
 }

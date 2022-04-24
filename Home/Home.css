@@ -50,7 +50,7 @@ h1 {
 .info-buttons {
     width: auto;
     height: 800px;
-    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("glacier.webp");
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../glacier.webp");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
