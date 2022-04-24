@@ -12,13 +12,14 @@
 			<h2>PROFESSIONAL DEVELOPMENT NOTEBOOK</h2>
 		</div>
 		<div class="options-wrapper">
+			<a href="../UserProfile/UserProfile.html">
+				<input type="button" value="Profile">
+			</a>
 			<input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
-
 			<!--在新窗口打开 EventForm.html-->
 			<a href="../EventForm/EventForm.html">
 				<input type="button" value="Add New Event">
 			</a>
-
 			<a href="../Sign-Out.php">
 				<input type="button" value="Sign Out">
 			</a>
@@ -30,13 +31,13 @@
 			<div id="events-wrapper">
 				<table class="events-table" cellspacing="0">
 					<tr>
-						<th class="first" scope="row">Event</th>
+						<th scope="row">Event</th>
 						<th scope="row">Type</th>
 						<th scope="row">Begin</th>
 						<th scope="row">End</th>
 						<th scope="row">Organization</th>
 						<th scope="row">Presenter</th>
-						<th class="last" scope="row">Description</th>
+						<th scope="row">Description</th>
 					</tr>
 					<tr>
 						<td class="Type first"></td>
@@ -45,7 +46,7 @@
 						<td class="Organization"></td>
 						<td class="Presenter"></td>
 						<td class="Description"></td>
-						<td class="Name last"></td>
+						<td class="Name"></td>
 					</tr>
 					<tr>
 						<td class="delete-button-cell"><form method="post" onsubmit="return DeleteEventTable(this)">

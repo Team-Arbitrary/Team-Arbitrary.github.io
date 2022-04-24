@@ -3,14 +3,14 @@
 $SERVER_NAME = "localhost";
 
 // Local Website
-//$USERNAME = "admin";
-//$PASSWORD = "zxcv7373";
-//$DATABASE_NAME = "arbitrary_team_database";
+$USERNAME = "admin";
+$PASSWORD = "zxcv7373";
+$DATABASE_NAME = "arbitrary_team_database";
 
 // Testing Website
-$USERNAME = "id18780626_arbitrary_tests";
-$PASSWORD = "k6wBr^9q@ShCt1Ns";
-$DATABASE_NAME = "id18780626_arbitrary_tests_database";
+// $USERNAME = "id18780626_arbitrary_tests";
+// $PASSWORD = "k6wBr^9q@ShCt1Ns";
+// $DATABASE_NAME = "id18780626_arbitrary_tests_database";
 
 // Project Website
 //$USERNAME = "id18737052_projectschema";
