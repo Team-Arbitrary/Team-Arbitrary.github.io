@@ -53,6 +53,7 @@ h2 {
 	background-color: rgb(15, 55, 94);
 }
 
+
 .title-wrapper {
 	width: 40vw;
 	max-width: 400px;
@@ -60,6 +61,18 @@ h2 {
 
 .options-wrapper {
 	margin: auto 0;
+}
+
+a, input[type="button"] {
+	width: 70px;
+	height: 70px;
+	border-radius: 60px;
+	overflow: hidden;
+	word-wrap: break-word;
+}
+
+a {
+
 }
 
 .events {
