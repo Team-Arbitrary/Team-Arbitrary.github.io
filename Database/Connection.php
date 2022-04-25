@@ -3,9 +3,9 @@
 $SERVER_NAME = "localhost";
 
 // Local Website
-// $USERNAME = "admin";
-// $PASSWORD = "zxcv7373";
-// $DATABASE_NAME = "arbitrary_team_database";
+//$USERNAME = "admin";
+//$PASSWORD = "zxcv7373";
+//$DATABASE_NAME = "arbitrary_team_database";
 
 // Testing Website
 $USERNAME = "id18780626_arbitrary_tests";
