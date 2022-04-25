@@ -39,44 +39,63 @@ td {
 h2 {
 	color: whitesmoke;
 	text-align: center;
-	font-size: 1.65em;
+	font-size: 1.85em;
 }
 
 .header {
 	display: flex;
 	text-align: center;
+	align-items: center;
 	justify-content: space-around;
-	background-color: blue;
-	text-align: right;
-	padding: 20px 0;
 	width: 100vw;
 	background-color: rgb(15, 55, 94);
+	padding: 10px;
 }
 
-
 .title-wrapper {
-	width: 40vw;
-	max-width: 400px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 50vw;
+	max-width: 500px;
 }
 
 .options-wrapper {
-	margin: auto 0;
+	margin: 0;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    margin: auto 5px;
 }
 
 a, input[type="button"] {
-	width: 70px;
-	height: 70px;
-	border-radius: 60px;
-	overflow: hidden;
-	word-wrap: break-word;
+	font-family: 'Lato';
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	color: whitesmoke;
+	font-size: 1.2em;
+	transition: all 0.3s ease-in 0s;
 }
 
-a {
+a:hover, input[type="button"]:hover {
+	transform: scale(1.1);
+}
 
+#updateButton {
+	font-size: 1.4em;
 }
 
 .events {
-	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../glacier.webp");
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../yosemite.webp");
 	background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -88,8 +107,7 @@ a {
 #events-wrapper {
 	margin: 10px auto;
 	width: 90vw;
-	border-radius: 30px;
-	padding: 10px;
+	border-radius: 20px;
 	overflow: hidden;
 	overflow-x: auto;
 }
@@ -97,10 +115,18 @@ a {
 .events-table {
 	border-radius: 20px;
 	width: 85vw;
-	max-width: 1000px;
+	max-width: 1300px;
 	margin: 10px auto;
 	padding: 10px;
 	background-color: rgb(15, 55, 94);
+}
+
+.events-table:first-child {
+	margin-top: 0;
+}
+
+.events-table:last-child {
+	margin-bottom: 0;
 }
 
 .delete-button-cell {
@@ -111,4 +137,19 @@ a {
 	padding: 7px 10px;
 	border: none;
 	border-radius: 10px;
+}
+
+@media screen and (max-width: 700px) {
+	.header {
+		flex-direction: column;
+	}
+
+	.title-wrapper {
+		width: 90vw;
+		margin: 0 auto;
+	}
+
+	.options-wrapper {
+		margin: 0 auto;
+	}
 }

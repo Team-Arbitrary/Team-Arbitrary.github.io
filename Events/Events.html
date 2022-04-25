@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Professional Development Events</title>
+	<title>Events</title>
 	<link href="Events.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -12,17 +12,21 @@
 			<h2>PROFESSIONAL DEVELOPMENT NOTEBOOK</h2>
 		</div>
 		<div class="options-wrapper">
-			<a href="../UserProfile/UserProfile.html">
-				<input type="button" value="Profile">
-			</a>
-			<input type="button" id="updateButton" value="Update Events" onClick="UpdateEventTables()">
-			<!--在新窗口打开 EventForm.html-->
-			<a href="../EventForm/EventForm.html">
-				<input type="button" value="Add New Event">
-			</a>
-			<a href="../Sign-Out.php">
-				<input type="button" value="Sign Out">
-			</a>
+			<ul>
+				<li>
+					<a href="../UserProfile/UserProfile.html"><input type="button" value="Profile"></a>
+				</li>
+				<li>
+					<input type="button" id="updateButton" value="Update" onClick="UpdateEventTables()">
+				</li>
+				<!--在新窗口打开 EventForm.html-->
+				<li>
+					<a href="../EventForm/EventForm.html"><input type="button" value="Add Events"></a>
+				</li>
+				<li>
+					<a href="../Sign-Out.php"><input type="button" value="Sign Out"></a>
+				</li>
+			</ul>
 		</div>
 	</header>
 	
@@ -40,13 +44,13 @@
 						<th scope="row">Description</th>
 					</tr>
 					<tr>
-						<td class="Type first"></td>
+						<td class="Name"></td>
+						<td class="Type"></td>
 						<td class="StartTime"></td>
 						<td class="EndTime"></td>
 						<td class="Organization"></td>
 						<td class="Presenter"></td>
 						<td class="Description"></td>
-						<td class="Name"></td>
 					</tr>
 					<tr>
 						<td class="delete-button-cell"><form method="post" onsubmit="return DeleteEventTable(this)">

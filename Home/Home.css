@@ -86,7 +86,7 @@ p {
 }
 
 a {
-    font-weight: bold;
+    color: whitesmoke;
     text-decoration: none;
     cursor: default;
     height: 40px;
@@ -99,26 +99,26 @@ a {
 }
 
 a:visited {
-    color: rgb(0, 11, 19);
+    color: whitesmoke;
 }
 
 button {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
     font-size: 1.5rem;
     border-radius: 10px;
     margin: 30px 0px;
     text-decoration: none;
-    background-color: rgba(45, 185, 255, 1);
+    background-color: rgb(15, 55, 94);
     border: none;
     width: 160px;
-    color: rgb(0, 11, 19);
     padding: 7px 0;
     transition: all 0.3s ease 0s;
-    box-shadow: -2.5px 4px rgba(7, 140, 210, 1);
+    box-shadow: -2.5px 4px rgba(0, 0, 0, 0.4);
 }
 
 button:hover {
-    background-color: rgba(34, 174, 250, 1);
-    box-shadow: -2.5px 4px rgba(0, 120, 190, 1);
     transform: scale(1.05);
 }
 
@@ -165,13 +165,22 @@ h2 {
     font-family: 'Lato', sans-serif;
     font-size: 1.3em;
     background-color: whitesmoke;
+    box-shadow: -4px 4px rgba(30, 30, 90, 0.8);
+    transition: all 0.3s ease 0s;
 }
 
 .contact:focus {
     outline: none;
+    transform: scale(1.02);
+}
+
+.contact:hover {
+    transform: scale(1.02);
 }
 
 input[type='submit'] {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 0.1em;
     text-align: center;
     width: 15vw;
     min-width: 150px;
