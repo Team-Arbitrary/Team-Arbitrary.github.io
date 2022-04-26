@@ -1,8 +1,9 @@
-nav {
-    width: 100%;
+* {
+    font-family: 'Lato', sans-serif;
 }
 
 .header {
+    user-select: none;
     display: flex;
     text-align: center;
     align-items: center;
@@ -13,6 +14,7 @@ nav {
 }
 
 .title-wrapper {
+    user-select: none;
     display: flex;
     text-align: center;
     align-items: center;

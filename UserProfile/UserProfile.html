@@ -29,29 +29,38 @@
 
 	<section class="profile-body">
 		<div class="form-wrapper">
+			<div class="profile-title">
+				<h1>Profile</h1>
+			</div>
 			<form method="post" onsubmit="return ChangeUserInformation(this)">
-			<label>Username:
-				<input type="text" id="userName" name="userName" required></label>
+			<label class="username">Username:
+				<input class="form-input" type="text" id="userName" name="userName" required></label>
 
-			<label>New Password:
-				<input type="text" id="newPassword" name="newPassword"></label>
+			<label class="new-password">New Password:
+				<input class="form-input" type="text" id="newPassword" name="newPassword"></label>
 
-			<p>Status:
-				<label>
-					<input type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
-					Full Time</label>
-				<label>
-					<input type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
-					Adjunct</label>
-				<label>
-					<input type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
-					Uncertain</label>
-			</p>
+			<div class="status">Status:
+				<div class="status-container">
+					<label style="margin-left: 5px;">Full Time
+						<input class="form-radio" type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
+					</label>
+				</div>
+				<div>
+					<label>Adjunct
+					<input class="form-radio" type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
+					</label>
+				</div>
+				<div>
+					<label>Uncertain
+						<input class="form-radio" type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
+					</label>
+				</div>
+			</div>
 				
-			<label>Email:
-				<input type="text" id="email" name="email"></label>
+			<label class="email">Email:
+				<input class="form-input"type="text" id="email" name="email"></label>
 
-			<br><input type="submit" id="ChangeButton" value="Change User Information">
+			<br><input class="form-submit" type="submit" id="ChangeButton" value="SAVE">
 				
 			</form>
 		</div>
