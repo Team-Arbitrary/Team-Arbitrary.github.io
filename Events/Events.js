@@ -3,7 +3,7 @@ const SIGN_IN_PHP_URL = "../Sign-In/Sign-In.php";
 const SIGN_IN_PAGE_URL = "../Sign-In/Sign-In.html";
 
 
-const eventTableArea = document.querySelector("div");
+const eventTableArea = document.querySelector('div[id="events-wrapper"]');
 const eventTable = document.querySelector("table");
 let eventTables = [];
 function UpdateEventTablesInHTML(events)
@@ -24,7 +24,7 @@ function UpdateEventTablesInHTML(events)
         eventTables.push(eventTable.outerHTML);
     }
 
-    eventTableArea.innerHTML = eventTables.join('');  // todo 查询 将数组中的所有值拼接成一个字符串
+    eventTableArea.innerHTML = eventTables.join('');  //Concatenates all values in an array into a string
 }
 
 
@@ -33,18 +33,19 @@ function HandleErrors(errorMessage)
     eventTableArea.innerHTML = '';  //Empty the events in the event tables area
     window.alert(errorMessage);
 
-    if (errorMessage === "Automatically sign in ...")
-    {
-        window.location.href=SIGN_IN_PHP_URL;
-    }
-    else if(errorMessage === "The session has expired or the account is not signed in")
-    {
-        window.location.href=SIGN_IN_PAGE_URL;
+    switch (errorMessage) {
+        case "Automatically sign in ...":
+            window.location.href=SIGN_IN_PHP_URL;
+            break;
+        case "The session has expired or the account is not signed in":
+            window.location.href=SIGN_IN_PAGE_URL;
     }
 }
 
 
 const xmlHttp = new XMLHttpRequest();
+
+
 const updateButton = document.querySelector("#updateButton");
 function UpdateEventTables()
 {
@@ -60,12 +61,12 @@ function UpdateEventTables()
         {
             UpdateEventTablesInHTML(events);
         }
-        else  // responseText 中的内容，是服务器传输的错误信息，不是 JSON 形式的数据
+        else  // The content in responseText is the error message transmitted by the server, not the data in JSON format
         {
             HandleErrors(xmlHttp.responseText);
         }
     }
-    catch(exception)  // responseText 中的内容，是服务器传输的错误信息，不是 JSON 形式的数据，并且不符合 JSON.parse() 的输入内容的格式要求
+    catch(exception)  // The content in responseText is the error message transmitted by the server, not the data in JSON format, and does not meet the format requirements of the input content of JSON.parse()
     {
         HandleErrors(xmlHttp.responseText);
     }
@@ -85,11 +86,7 @@ function DeleteEventTable(formElement)
 
         window.alert(xmlHttp.responseText);
         deleteButton.disabled=false;
+        return true;  // The browser automatically refreshes the page
     }
+    return false;  // Deny the browser to automatically refresh the page
 }
-
-
-
-// eventTable = document.createElement("table");
-// eventTableCon = document.createTextNode("");
-// let eventTable = document.getElementsByTagName("table")[0];

@@ -1,3 +1,18 @@
+* {
+	user-select: none;
+}
+
+html {
+	font-family: 'Lato', sans-serif;
+}
+
+body {
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../yosemite.webp");
+	background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .form-title {
   margin-bottom: 20px;
@@ -29,18 +44,19 @@ label {
 }
 
 .container {
+	width: 80vw;
 	display: flex;
 	flex-direction: column;
-    min-height: 870px;
-    margin: 10px auto;
-    margin-top: 25px;
-    padding: 20px;
-    border: none;
-    border-radius: 30px;
-    background-color: rgba(180, 210, 255, 0.4);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  min-height: 870px;
+  margin: 10px auto;
+  margin-top: 25px;
+  padding: 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgba(175, 205, 250, 0.85);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .section {
@@ -48,6 +64,10 @@ label {
     flex-direction: column;
     margin: 5px auto;
     width: 60vw;
+}
+
+.sessionType {
+	margin-bottom: 0;
 }
 
 form {
@@ -62,4 +82,10 @@ input[type='submit'] {
 
 input[type='submit']:hover {
 	background-color: rgba(225, 225, 225, 0.8);
+}
+
+.footer-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

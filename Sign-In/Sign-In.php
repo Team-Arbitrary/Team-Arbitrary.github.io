@@ -11,6 +11,7 @@ require_once "../Utils.php";  // Load some common functions to reuse code
 session_start();
 if ( isset($_POST['userName'], $_POST['password']) )  // From sign-in action of user
 {
+    session_unset();
     $postedUserName = $_POST['userName'];
     $postedPassword = $_POST['password'];
 }
@@ -80,13 +81,6 @@ if ($statement->num_rows == 1)
         }
 
         session_write_close();
-
-//        if ( session_status() === PHP_SESSION_NONE )
-//        {
-//            Alert("session NONE, ".
-//                "userName: {$_SESSION['userName']} ".
-//                "userID: {$_SESSION['userID']}");
-//        }
 
         GoToURL($MAIN_PAGE_URL);
     }

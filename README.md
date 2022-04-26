@@ -31,6 +31,14 @@ Platform Tools:
 
 
 
+## Testing Process Diagram
+
+![Testing Process Diagram.drawio](DESIGN/Testing_Process_Diagram.drawio.png)
+
+
+
+
+
 ## Coding Conventions:
 
 Abbreviations are not used in any naming to avoid forgetting, misunderstanding, and incomprehension

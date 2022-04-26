@@ -9,13 +9,11 @@ if ( !isset($connection) )  // Check if the Database connection exists
 }
 
 
-// Query All Event of The User
+// Query Related Information of The User
 // Prepare SQL statement, preparing the SQL statement will prevent SQL injection.
 // and Statements can be reused without repeated loading.
 if ( !$statement = $connection->prepare(
-    "SELECT event.id , event.name, event.type, event.start_time, event.end_time, 
-                  event.organization, event.presenter, event.description 
-           FROM event WHERE event.user_id = ?") )
+    "SELECT user.name, user.status, user.email FROM user WHERE user.id = ?") )
 {
     exit("! Failed to prepare SQL statement, Please contact administrator");
 }
@@ -31,26 +29,20 @@ if ( !$statement->execute() )
 }
 $statement->store_result();
 
-if ($statement->num_rows > 0)
+if ($statement->num_rows == 1)
 {
-    $statement->bind_result($id,$name, $type, $startTime, $endTime,
-                            $organization, $presenter, $description);
+    $statement->bind_result($name, $status, $email);
 
     while ($statement->fetch())  // Fetch results from a prepared SQL statement into the bound variables
     {
-        $events[] = array("id"=>$id,
-                          "name"=>$name,
-                          "type"=>$type,
-                          "startTime"=>$startTime,
-                          "endTime"=>$endTime,
-                          "organization"=>$organization,
-                          "presenter"=>$presenter,
-                          "description"=>$description);
+        $user[] = array("name"=>$name,
+                        "status"=>$status,
+                        "email"=>$email);
     }
 
-    exit(json_encode($events));
+    exit(json_encode($user));
 }
 else
 {
-    exit("No Event");
+    exit("! Database Error, Please contact the administrator");
 }

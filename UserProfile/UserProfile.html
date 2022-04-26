@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="../General.css" rel="stylesheet" type="text/css">
+	<link href="UserProfile.css" rel="stylesheet" type="text/css">
+	<title>Profile</title>
+</head>
+
+<body onpageshow="UpdateUserInformation()">
+	<header class="header">
+		<div class="title-wrapper">
+			<h2>PROFESSIONAL DEVELOPMENT NOTEBOOK</h2>
+		</div>
+		<div class="options-wrapper">
+			<ul>
+				<li>
+					<a href="../Events/Events.html"><input type="button" value="View Events"></a>
+				</li>
+				<li>
+					<a href="../EventForm/EventForm.html"><input type="button" value="Add Events"></a>
+				</li>
+				<li>
+					<a href="../Sign-Out.php"><input type="button" value="Sign Out"></a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<section class="profile-body">
+		<div class="form-wrapper">
+			<form method="post" onsubmit="return ChangeUserInformation(this)">
+			<div class="profile-title">
+				<h1>Profile</h1>
+			</div>
+			<table class="profile-table">
+				<tr>
+					<td><label class="username" for="userName">Username:</label></td>
+					<td><input class="form-input" type="text" id="userName" name="userName" required></td>
+				</tr>
+				<tr>
+					<td><label class="new-password" for="newPassword">New Password:</label></td>
+					<td><input class="form-input" type="text" id="newPassword" name="newPassword"></td>
+				</tr>
+				<tr>
+					<td><div class="status-title">Status:</div></td>
+					<td>
+						<div>
+							<label for="full-TimeStatus">Full Time</label>
+							<input class="form-radio" type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
+						</div>
+						<div>
+							<label for="adjunctStatus">Adjunct</label>
+							<input class="form-radio" type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
+						</div>
+						<div>
+							<label for="uncertainStatus">Uncertain</label>
+							<input class="form-radio" type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label class="email">Email:</label></td>
+					<td><input class="form-input email-input"type="text" id="email" name="email"></td>
+				</tr>
+			</table>
+			<input class="form-submit" type="submit" id="ChangeButton" value="SAVE">	
+			</form>
+		</div>
+	</section>
+</body>
+
+<script src="UserProfile.js"></script>
+</html>
