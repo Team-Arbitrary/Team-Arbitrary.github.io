@@ -13,8 +13,14 @@ html {
 }
 
 body {
+	min-height: 100vh;
 	display: table-cell;
 	vertical-align: middle;
+	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../yosemite.webp");
+	background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 	overscroll-behavior-y: none;
 }
 
@@ -37,6 +43,7 @@ td {
 }
 
 h2 {
+	user-select: none;
 	color: whitesmoke;
 	text-align: center;
 	font-size: 1.85em;
@@ -95,13 +102,7 @@ a:hover, input[type="button"]:hover {
 }
 
 .events {
-	background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../yosemite.webp");
-	background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
 	padding: 10px;
-	height: 100vh;
 }
 
 #events-wrapper {

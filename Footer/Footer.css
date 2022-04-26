@@ -4,4 +4,5 @@ p {
     font-size: 1em;
     font-family: 'Lato', sans-serif;
     margin-top: 3em;
+    user-select: none;
 }

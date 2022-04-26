@@ -1,28 +1,40 @@
 * {
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    user-select: none;
 }
 
 body {
+    height: 100vh;
+    display: table-cell;
     background-color: #435165;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("../glacier.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 div {
     width: 400px;
     background-color: #ffffff;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
+    margin: 0 auto 100px auto;
+    border-radius: 25px;
 }
 
 h1 {
+    background-color: rgb(15, 55, 94);
     text-align: center;
-    color: #5b6574;
+    color: whitesmoke;
     font-size: 24px;
     padding: 20px 0 20px 0;
     border-bottom: 1px solid #dee0e4;
+    border-radius: 20px 20px 0 0;
+    letter-spacing: 0.1em;
 }
 
 form {
@@ -38,7 +50,7 @@ label {
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: #3274d6;
+    background-color: rgb(25, 60, 99);
     color: #ffffff;
 }
 
@@ -51,19 +63,29 @@ input {
 }
 
 input[type="submit"] {
+    font-size: 1.1em;
     width: 100%;
     padding: 15px;
     margin-top: 20px;
     margin-bottom: 0;
-    background-color: #3274d6;
+    background-color: rgb(15, 55, 94);
     border: 0;
     cursor: pointer;
+    letter-spacing: 0.15em;
     font-weight: bold;
+    border-radius: 0 0 20px 20px;
     color: #ffffff;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease 0s;
 }
 
 input[type="submit"]:hover {
-    background-color: #2868c7;
-    transition: background-color 0.2s;
+    background-color: rgb(35, 75, 114);
 }
+
+.Footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+

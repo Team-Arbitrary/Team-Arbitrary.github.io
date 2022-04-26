@@ -29,43 +29,45 @@
 
 	<section class="profile-body">
 		<div class="form-wrapper">
+			<form method="post" onsubmit="return ChangeUserInformation(this)">
 			<div class="profile-title">
 				<h1>Profile</h1>
 			</div>
-			<form method="post" onsubmit="return ChangeUserInformation(this)">
-			<label class="username">Username:
-				<input class="form-input" type="text" id="userName" name="userName" required></label>
-
-			<label class="new-password">New Password:
-				<input class="form-input" type="text" id="newPassword" name="newPassword"></label>
-
-			<div class="status">Status:
-				<div class="status-container">
-					<label style="margin-left: 5px;">Full Time
-						<input class="form-radio" type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
-					</label>
-				</div>
-				<div>
-					<label>Adjunct
-					<input class="form-radio" type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
-					</label>
-				</div>
-				<div>
-					<label>Uncertain
-						<input class="form-radio" type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
-					</label>
-				</div>
-			</div>
-				
-			<label class="email">Email:
-				<input class="form-input"type="text" id="email" name="email"></label>
-
-			<br><input class="form-submit" type="submit" id="ChangeButton" value="SAVE">
-				
+			<table class="profile-table">
+				<tr>
+					<td><label class="username" for="userName">Username:</label></td>
+					<td><input class="form-input" type="text" id="userName" name="userName" required></td>
+				</tr>
+				<tr>
+					<td><label class="new-password" for="newPassword">New Password:</label></td>
+					<td><input class="form-input" type="text" id="newPassword" name="newPassword"></td>
+				</tr>
+				<tr>
+					<td><div class="status-title">Status:</div></td>
+					<td>
+						<div>
+							<label for="full-TimeStatus">Full Time</label>
+							<input class="form-radio" type="radio" id="full-TimeStatus" name="status" value="Full-Time" required>
+						</div>
+						<div>
+							<label for="adjunctStatus">Adjunct</label>
+							<input class="form-radio" type="radio" id="adjunctStatus" name="status" value="Adjunct" required>
+						</div>
+						<div>
+							<label for="uncertainStatus">Uncertain</label>
+							<input class="form-radio" type="radio" id="uncertainStatus" name="status" value="Uncertain" required>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label class="email">Email:</label></td>
+					<td><input class="form-input email-input"type="text" id="email" name="email"></td>
+				</tr>
+			</table>
+			<input class="form-submit" type="submit" id="ChangeButton" value="SAVE">	
 			</form>
 		</div>
 	</section>
-	
 </body>
 
 <script src="UserProfile.js"></script>

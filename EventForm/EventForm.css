@@ -1,3 +1,7 @@
+* {
+	user-select: none;
+}
+
 html {
 	font-family: 'Lato', sans-serif;
 }
@@ -49,7 +53,7 @@ label {
   padding: 20px;
   border: none;
   border-radius: 30px;
-  background-color: rgba(180, 210, 255, 0.85);
+  background-color: rgba(175, 205, 250, 0.85);
   justify-content: center;
   align-items: center;
   text-align: center;
